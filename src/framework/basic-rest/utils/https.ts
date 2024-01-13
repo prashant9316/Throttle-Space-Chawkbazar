@@ -2,7 +2,7 @@ import axios from "axios";
 import { getToken } from "./get-token";
 
 // const baseURL = 'http://localhost:5055'
-const baseURL = 'https://throttle-space-admin.onrender.com'
+const baseURL = 'https://throttle-space-backend.onrender.com'
 
 const http = axios.create({
   baseURL: baseURL,
