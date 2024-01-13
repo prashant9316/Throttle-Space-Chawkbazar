@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import { useUI } from '@contexts/ui.context';
-import usePrice from '@framework/product/use-price';
-import { Product } from '@framework/types';
+// import usePrice from '@framework/product/use-price';
+import { ProductDetails } from '@framework/types';
 import Text from '@components/ui/text';
 import cn from 'classnames';
 
 interface ProductProps {
-  product: Product;
+  product: ProductDetails;
   index: number;
   imgLoading?: 'eager' | 'lazy';
   variant?: 'left' | 'center' | 'combined' | 'flat' | 'modern';
@@ -46,11 +46,14 @@ const ProductOverlayCard: React.FC<ProductProps> = ({
   }
 
   const { openModal, setModalView, setModalData } = useUI();
-  const { price, basePrice, discount } = usePrice({
-    amount: product.sale_price ? product.sale_price : product.price,
-    baseAmount: product.price,
-    currencyCode: 'USD',
-  });
+  // const { price, basePrice, discount } = usePrice({
+  //   amount: product.prices.price ? product.sale_price : product.price,
+  //   baseAmount: product.price,
+  //   currencyCode: 'USD',
+  // });
+  const discount = product.prices.price - product.prices.originalPrice;
+  const price = `₹${product.prices.price}/-`;
+  const basePrice = `₹${product.prices.originalPrice}/-`;
   function handlePopupView() {
     setModalData({ data: product });
     setModalView('PRODUCT_VIEW');
@@ -60,9 +63,8 @@ const ProductOverlayCard: React.FC<ProductProps> = ({
   return (
     <div
       onClick={handlePopupView}
-      className={`${classes} cursor-pointer group flex flex-col bg-gray-200 ${
-        !disableBorderRadius && 'rounded-md'
-      } relative items-center justify-between overflow-hidden`}
+      className={`${classes} cursor-pointer group flex flex-col bg-gray-200 ${!disableBorderRadius && 'rounded-md'
+        } relative items-center justify-between overflow-hidden`}
     >
       <div
         className={cn(
@@ -71,18 +73,18 @@ const ProductOverlayCard: React.FC<ProductProps> = ({
             '!p-0': variant === 'modern',
           }
         )}
-        title={product?.name}
+        title={product?.title.en}
       >
         <Image
           src={
-            product?.image?.original ??
+            product?.image[0] ??
             '/assets/placeholder/products/product-featured.png'
           }
           width={size}
           height={size}
           objectFit="contain"
           loading={imgLoading}
-          alt={product?.name || 'Product Image'}
+          alt={product?.title.en || 'Product Image'}
           className="transition duration-500 ease-in-out transform group-hover:scale-110"
         />
       </div>
@@ -117,16 +119,16 @@ const ProductOverlayCard: React.FC<ProductProps> = ({
 
       <div
         className="flex flex-col w-full px-4 pb-4 md:flex-row lg:flex-col 2xl:flex-row md:justify-between md:items-center lg:items-start 2xl:items-center md:px-5 3xl:px-7 md:pb-5 3xl:pb-7"
-        title={product?.name}
+        title={product?.title.en}
       >
         <div className="overflow-hidden ltr:md:pr-2 rtl:md:pl-2 ltr:lg:pr-0 rtl:lg:pl-0 ltr:2xl:pr-2 rtl:2xl:pl-2">
           <h2 className="mb-1 text-sm font-semibold truncate text-heading md:text-base xl:text-lg">
-            {product?.name}
+            {product?.title.en}
           </h2>
 
           {variant !== 'modern' ? (
             <p className="text-body text-xs xl:text-sm leading-normal xl:leading-relaxed truncate max-w-[250px]">
-              {product?.description}
+              {product?.description.en}
             </p>
           ) : (
             <Text className="pb-0.5 truncate">35 Brands, 1000+ Products</Text>

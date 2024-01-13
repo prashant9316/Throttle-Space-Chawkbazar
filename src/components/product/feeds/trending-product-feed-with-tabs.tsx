@@ -26,7 +26,7 @@ const TrendingProductFeedWithTabs: React.FC<any> = () => {
               selected ? 'tab-li-selected' : 'tab-li'
             }
           >
-            <p className=''>{t('tab-all-collection')}</p>
+            <p className=''>{t('All Products')}</p>
           </Tab>
           <Tab
             as='li'
@@ -34,7 +34,7 @@ const TrendingProductFeedWithTabs: React.FC<any> = () => {
               selected ? 'tab-li-selected' : 'tab-li'
             }
           >
-            <p>{t('tab-flash-sale')}</p>
+            <p>{t('Flash Sale')}</p>
           </Tab>
           <Tab
             as='li'
@@ -42,7 +42,7 @@ const TrendingProductFeedWithTabs: React.FC<any> = () => {
               selected ? 'tab-li-selected' : 'tab-li'
             }
           >
-            <p>{t('tab-best-sellers')}</p>
+            <p>{t('Best Selling')}</p>
           </Tab>
           <Tab
             as='li'
@@ -50,14 +50,14 @@ const TrendingProductFeedWithTabs: React.FC<any> = () => {
               selected ? 'tab-li-selected' : 'tab-li'
             }
           >
-            <p>{t('tab-featured')}</p>
+            <p>{t('Featured Products')}</p>
           </Tab>
         </Tab.List>
 
         <Tab.Panels>
           <Tab.Panel>
             <ProductsBlock
-              products={data?.slice(0, 10)}
+              products={data?.productRef}
               loading={isLoading}
               error={error?.message}
               uniqueKey='new-arrivals'
@@ -68,7 +68,7 @@ const TrendingProductFeedWithTabs: React.FC<any> = () => {
           </Tab.Panel>
           <Tab.Panel>
             <ProductsBlock
-              products={data?.slice(5, 15)}
+              products={data?.productRef}
               loading={isLoading}
               error={error?.message}
               uniqueKey='new-arrivals'
@@ -79,7 +79,7 @@ const TrendingProductFeedWithTabs: React.FC<any> = () => {
           </Tab.Panel>
           <Tab.Panel>
             <ProductsBlock
-              products={data?.slice(12, 22)}
+              products={data?.productRef}
               loading={isLoading}
               error={error?.message}
               uniqueKey='new-arrivals'
@@ -90,7 +90,7 @@ const TrendingProductFeedWithTabs: React.FC<any> = () => {
           </Tab.Panel>
           <Tab.Panel>
             <ProductsBlock
-              products={data?.slice(8, 18)}
+              products={data?.productRef}
               loading={isLoading}
               error={error?.message}
               uniqueKey='new-arrivals'

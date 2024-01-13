@@ -8,9 +8,10 @@ const NewArrivalsProductFeedWithTabs: React.FC<any> = () => {
   const { t } = useTranslation('common');
 
   const { data, isLoading, error } = useProductsQuery({
-    limit: 10,
+    limit: 5,
   });
-
+  // console.log("New Arrival Products:")
+  // console.log(data)
   return (
     <div className="mb-12 md:mb-14 xl:mb-16">
       <SectionHeader
@@ -28,7 +29,7 @@ const NewArrivalsProductFeedWithTabs: React.FC<any> = () => {
                 : 'tab-li focus-visible:outline-0 focus-visible:outline-transparent'
             }
           >
-            <p>{t('tab-all-collection')}</p>
+            <p>{t('All Products')}</p>
           </Tab>
           <Tab
             as="li"
@@ -36,7 +37,7 @@ const NewArrivalsProductFeedWithTabs: React.FC<any> = () => {
               selected ? 'tab-li-selected' : 'tab-li'
             }
           >
-            <p>{t('tab-mens-collection')}</p>
+            <p>{t('Frames')}</p>
           </Tab>
           <Tab
             as="li"
@@ -44,7 +45,7 @@ const NewArrivalsProductFeedWithTabs: React.FC<any> = () => {
               selected ? 'tab-li-selected' : 'tab-li'
             }
           >
-            <p>{t('tab-womens-collection')}</p>
+            <p>{t('Batteries')}</p>
           </Tab>
           <Tab
             as="li"
@@ -52,14 +53,14 @@ const NewArrivalsProductFeedWithTabs: React.FC<any> = () => {
               selected ? 'tab-li-selected' : 'tab-li'
             }
           >
-            <p>{t('tab-kids-collection')}</p>
+            <p>{t('Radios')}</p>
           </Tab>
         </Tab.List>
 
         <Tab.Panels>
           <Tab.Panel>
             <ProductsBlock
-              products={data?.slice(0, 8)}
+              products={data?.productRef}
               loading={isLoading}
               error={error?.message}
               uniqueKey="new-arrivals"
@@ -70,7 +71,7 @@ const NewArrivalsProductFeedWithTabs: React.FC<any> = () => {
           </Tab.Panel>
           <Tab.Panel>
             <ProductsBlock
-              products={data?.slice(4, 12)}
+              products={data?.productRef}
               loading={isLoading}
               error={error?.message}
               uniqueKey="new-arrivals"
@@ -81,7 +82,7 @@ const NewArrivalsProductFeedWithTabs: React.FC<any> = () => {
           </Tab.Panel>
           <Tab.Panel>
             <ProductsBlock
-              products={data?.slice(8, 16)}
+              products={data?.productRef}
               loading={isLoading}
               error={error?.message}
               uniqueKey="new-arrivals"
@@ -92,7 +93,7 @@ const NewArrivalsProductFeedWithTabs: React.FC<any> = () => {
           </Tab.Panel>
           <Tab.Panel>
             <ProductsBlock
-              products={data?.slice(14, 22)}
+              products={data?.productRef}
               loading={isLoading}
               error={error?.message}
               uniqueKey="new-arrivals"

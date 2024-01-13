@@ -1,25 +1,25 @@
 import SectionHeader from '@components/common/section-header';
 import Carousel from '@components/ui/carousel/carousel';
 import { SwiperSlide } from 'swiper/react';
-import { Product } from '@framework/types';
+import { ProductDetails } from '@framework/types';
 import ProductCard from '@components/product/product-card';
 
 interface ProductsBlockProps {
   sectionHeading: string;
   className?: string;
   categorySlug?: string;
-  products?: Product[];
+  products?: ProductDetails[];
   loading: boolean;
   error?: string;
   uniqueKey?: string;
   type?:
-    | 'rounded'
-    | 'circle'
-    | 'gridTrendy'
-    | 'grid'
-    | 'gridSlim'
-    | 'list'
-    | 'listSmall';
+  | 'rounded'
+  | 'circle'
+  | 'gridTrendy'
+  | 'grid'
+  | 'gridSlim'
+  | 'list'
+  | 'listSmall';
   imgWidth?: number | string;
   imgHeight?: number | string;
 }
@@ -70,22 +70,22 @@ const ProductsBlockCarousel: React.FC<ProductsBlockProps> = ({
         className=""
         {...(type === 'gridTrendy'
           ? {
-              buttonGroupClassName: '!w-auto !top-0 ltr:!right-6 rtl:!left-6',
-              type: 'list',
-              buttonSize: 'small',
-              isFraction: true,
-              paginationFractionId: 'productsPaginationFraction',
-              pagination: {
-                el: '#productsPaginationFraction',
-                type: 'fraction',
-                formatFractionCurrent: function (number: number) {
-                  return number;
-                },
+            buttonGroupClassName: '!w-auto !top-0 ltr:!right-6 rtl:!left-6',
+            type: 'list',
+            buttonSize: 'small',
+            isFraction: true,
+            paginationFractionId: 'productsPaginationFraction',
+            pagination: {
+              el: '#productsPaginationFraction',
+              type: 'fraction',
+              formatFractionCurrent: function (number: number) {
+                return number;
               },
-            }
+            },
+          }
           : {
-              buttonGroupClassName: 'hidden',
-            })}
+            buttonGroupClassName: 'hidden',
+          })}
       >
         {products?.map((product, id) => (
           <SwiperSlide key={`testimonial--key-${id}`} className="pt-2">

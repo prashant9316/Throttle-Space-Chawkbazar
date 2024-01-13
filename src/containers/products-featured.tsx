@@ -2,7 +2,7 @@ import SectionHeader from '@components/common/section-header';
 import ProductOverlayCard from '@components/product/product-overlay-card';
 import { useFeaturedProductsQuery } from '@framework/product/get-all-featured-products';
 import Alert from '@components/ui/alert';
-import { Product } from '@framework/types';
+import { ProductDetails } from '@framework/types';
 import Image from 'next/image';
 import cn from 'classnames';
 
@@ -43,10 +43,8 @@ const ProductsFeatured: React.FC<ProductsProps> = ({
       ) : (
         <div
           className={cn(
-            `grid grid-cols-4 grid-rows-2 gap-${
-              demoVariant === 'ancient' ? 1 : 3
-            } md:gap-${demoVariant === 'ancient' ? 2 : 5} xl:gap-${
-              demoVariant === 'ancient' ? 1 : 7
+            `grid grid-cols-4 grid-rows-2 gap-${demoVariant === 'ancient' ? 1 : 3
+            } md:gap-${demoVariant === 'ancient' ? 2 : 5} xl:gap-${demoVariant === 'ancient' ? 1 : 7
             }`,
             {
               'lg:grid-cols-4': variant === 'modern',
@@ -64,10 +62,10 @@ const ProductsFeatured: React.FC<ProductsProps> = ({
               />
             </div>
           )}
-          {data?.slice(0, limit).map((product: Product, idx: number) => (
+          {data?.productRef.slice(0, limit).map((product: ProductDetails, idx: number) => (
             <ProductOverlayCard
               disableBorderRadius={disableBorderRadius}
-              key={`product--key${product.id}`}
+              key={`product--key${product._id}`}
               product={product}
               variant={variant}
               index={idx}

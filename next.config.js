@@ -11,4 +11,15 @@ module.exports = withPWA({
   typescript: {
     ignoreBuildErrors: true,
   },
+  images: {
+    domains: [
+      "images.contentstack.io",
+      "cdn.notonthehighstreet.com",
+      "dwgokgnbz84c3.cloudfront.net",
+      "dwgokgnbz84c3.cloudfront.net",
+      "m.media-amazon.com",
+      "tesorostoreuser.vercel.app",
+      "res.cloudinary.com"
+    ]
+  }
 });

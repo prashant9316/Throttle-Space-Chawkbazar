@@ -1,4 +1,5 @@
 import { QueryKey } from '@tanstack/react-query';
+import exp from 'constants';
 
 export type CollectionsQueryOptionsType = {
   text?: string;
@@ -133,4 +134,116 @@ export type Shop = {
   socialShare: any;
   created_at: string;
   updated_at: string;
+};
+
+interface title {
+  en: string;
+  ar: string;
+}
+
+interface bannerType {
+  _id: string;
+  offerLink: string;
+  imageRef: string;
+  mobileImageRef: string;
+  state: boolean;
+}
+
+export type HomepageBanner = {
+  visible: boolean;
+  productRef: string[] | ProductDetails[];
+  categoryRef: string[];
+  BlogLinkReference: string[];
+  _id: string;
+  sectionCode: string;
+  sectionTitle: string;
+  offerBlock: bannerType[];
+}
+
+export type FetchProducts = {
+  visible: boolean;
+  productRef: ProductDetails[];
+  categoryRef: string[];
+  BlogLinkReference?: string[];
+  _id: string;
+  sectionCode: string;
+  sectionTitle: string;
+  offerBlock?: bannerType[];
+}
+
+interface Categories {
+  image: string,
+  status: boolean,
+  _id: string,
+  name: title,
+  description: title,
+  parentId: string,
+  parentName: string,
+  icon: string,
+  createdAt: string,
+  updatedAt: string
+}
+
+export type FetchCategories = {
+  visible: boolean;
+  productRef: String[];
+  categoryRef: Categories[];
+  BlogLinkReference?: string[];
+  _id: string;
+  sectionCode: string;
+  sectionTitle: string;
+  offerBlock?: bannerType[];
+}
+
+export type categoryRef = {
+  image: string,
+  status: boolean,
+  _id: string,
+  name: title,
+  description: title,
+  parentId: string,
+  parentName: string,
+  icon: string,
+  createdAt: string,
+  updatedAt: string,
+  slug: string
+}
+
+export type prices = {
+  price: number;
+  originalPrice: number;
+  discount: number;
+}
+
+export type description = {
+  en: string;
+}
+export type category = {
+  status: boolean;
+  name: title;
+  description: description;
+  parentName: string;
+  icon: string;
+}
+export type ProductDetails = {
+  _id: string;
+  approved?: boolean;
+  barcode?: string;
+  categories: category[];
+  category: category;
+  createdAt: object;
+  description: description;
+  image: string[];
+  isCombination: object;
+  prices: prices;
+  productId: string;
+  sku: string;
+  slug: string;
+  status: string;
+  stock: number;
+  tag: string[];
+  title: title;
+  variants?: object;
+  gallery?: string[];
+  limit?: number;
 };

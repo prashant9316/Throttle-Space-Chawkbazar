@@ -1,15 +1,15 @@
-import { QueryOptionsType, Product } from '@framework/types'
-import http from '@framework/utils/http'
+import { QueryOptionsType, FetchProducts } from '@framework/types'
+import https from '@framework/utils/https'
 import { API_ENDPOINTS } from '@framework/utils/api-endpoints'
 import { useQuery } from '@tanstack/react-query'
 
 export const fetchProducts = async () => {
-  const { data } = await http.get(API_ENDPOINTS.PRODUCTS_2)
-  return data as Product[]
+  const { data } = await https.get(API_ENDPOINTS.NEW_ARRIVAL_PRODUCTS)
+  return data.products[0] as FetchProducts
 }
 export const useProductsQuery = (options: QueryOptionsType) => {
-  return useQuery<Product[], Error>({
-    queryKey: [API_ENDPOINTS.PRODUCTS_2, options],
+  return useQuery<FetchProducts, Error>({
+    queryKey: [API_ENDPOINTS.NEW_ARRIVAL_PRODUCTS, options],
     queryFn: fetchProducts
   })
 }
