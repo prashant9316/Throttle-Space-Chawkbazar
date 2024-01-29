@@ -62,17 +62,17 @@ const HeroWithCategory: React.FC<Props> = ({
           >
             {!data?.categories?.data?.length && isLoading
               ? Array.from({ length: 8 }).map((_, idx) => (
-                  <SwiperSlide key={`category-list-${idx}`}>
-                    <CategoryListCardLoader
-                      uniqueKey={`category-list-${idx}`}
-                    />
-                  </SwiperSlide>
-                ))
+                <SwiperSlide key={`category-list-${idx}`}>
+                  <CategoryListCardLoader
+                    uniqueKey={`category-list-${idx}`}
+                  />
+                </SwiperSlide>
+              ))
               : data?.categories?.data?.map((category) => (
-                  <SwiperSlide key={`category--key${category.id}`}>
-                    <CategoryListCard category={category} />
-                  </SwiperSlide>
-                ))}
+                <SwiperSlide key={`category--key${category._id}`}>
+                  <CategoryListCard category={category} />
+                </SwiperSlide>
+              ))}
           </Carousel>
         </div>
       ) : (
@@ -84,7 +84,7 @@ const HeroWithCategory: React.FC<Props> = ({
               ?.slice(0, 8)
               .map((category) => (
                 <CategoryListCard
-                  key={`category--key${category.id}`}
+                  key={`category--key${category._id}`}
                   category={category}
                 />
               ))

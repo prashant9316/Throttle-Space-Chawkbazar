@@ -46,7 +46,7 @@ const ProductsWithFlashSale: React.FC<Props> = ({
               ?.slice(0, 4)
               ?.map((product) => (
                 <ProductCard
-                  key={`product--key${product.id}`}
+                  key={`product--key${product._id}`}
                   product={product}
                   imgWidth={265}
                   imgHeight={265}

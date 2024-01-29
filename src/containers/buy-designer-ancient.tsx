@@ -1,5 +1,5 @@
 import Container from '@components/ui/container';
-import { Product } from '@framework/types';
+import { ProductDetails } from '@framework/types';
 import ProductCard from '@components/product/product-card';
 import Alert from '@components/ui/alert';
 import ProductFeedLoader from '@components/ui/loaders/product-feed-loader';
@@ -46,12 +46,12 @@ const BuyDesignerAncient: React.FC<Props> = ({ imgWidth, imgHeight }) => {
                 ) : (
                   products
                     ?.slice(0, 3)
-                    ?.map((product: Product) => (
+                    ?.map((product: ProductDetails) => (
                       <ProductCard
                         showCategory={true}
                         showRating={true}
                         hideProductDescription={true}
-                        key={`product--key${product.id}`}
+                        key={`product--key${product._id}`}
                         product={product}
                         imgWidth={imgWidth}
                         imgHeight={imgHeight}

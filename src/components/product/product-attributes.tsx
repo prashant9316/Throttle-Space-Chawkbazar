@@ -24,7 +24,7 @@ export const ProductAttributes: React.FC<Props> = ({
         {title}
       </h3>
       <ul className="flex flex-wrap colors ltr:-mr-3 rtl:-ml-3">
-        {attributes?.map(({ id, value, meta }) => (
+        {attributes?.map(({ id, value }) => (
           <li
             key={`${value}-${id}`}
             className={cn(

@@ -117,11 +117,11 @@ const CategoryBlock: React.FC<CategoriesProps> = ({
               );
             })
             : data?.categories?.data?.map((category) => (
-              <SwiperSlide key={`category--key-${category.id}`}>
+              <SwiperSlide key={`category--key-${category._id}`}>
                 <Card
                   imgSize={imgSize}
                   item={category}
-                  href={`${ROUTES.CATEGORY}/${category.slug}`}
+                  href={`${ROUTES.CATEGORY}/${category.name.en}`}
                   variant={type}
                   effectActive={true}
                   size={type === 'rounded' ? 'medium' : 'small'}

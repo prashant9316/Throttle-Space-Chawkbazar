@@ -1,10 +1,10 @@
-import { QueryOptionsType, Product } from "@framework/types";
+import { QueryOptionsType, ProductDetails } from "@framework/types";
 import { API_ENDPOINTS } from "@framework/utils/api-endpoints";
 import http from "@framework/utils/http";
 import shuffle from "lodash/shuffle";
 import { useInfiniteQuery } from "@tanstack/react-query";
 type PaginatedProduct = {
-	data: Product[];
+	data: ProductDetails[];
 	paginatorInfo: any;
 };
 const fetchProducts = async () => {

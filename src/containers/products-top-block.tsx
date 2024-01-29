@@ -31,7 +31,7 @@ const ProductsTopBlock: React.FC<Props> = ({
         ) : (
           data?.map((product) => (
             <ProductCard
-              key={`product--key-${product.id}`}
+              key={`product--key-${product._id}`}
               product={product}
               imgWidth={265}
               imgHeight={265}

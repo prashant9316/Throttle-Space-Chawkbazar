@@ -15,11 +15,11 @@ import Banner2 from 'public/assets/images/banner/megamenu/banner-2.png';
 
 import { ThunderIcon } from '@components/icons/thunder-icon';
 import { WomenIcon } from '@components/icons/women-icon';
-import { MenIcon } from '@components/icons/men-icon';
-import { WatchIcon } from '@components/icons/watch-icon';
-import { WalletIcon } from '@components/icons/wallet-icon';
-import { BagIcon } from '@components/icons/bag-icon';
-import { JewelryIcon } from '@components/icons/jewelry-icon';
+// import { MenIcon } from '@components/icons/men-icon';
+// import { WatchIcon } from '@components/icons/watch-icon';
+// import { WalletIcon } from '@components/icons/wallet-icon';
+// import { BagIcon } from '@components/icons/bag-icon';
+// import { JewelryIcon } from '@components/icons/jewelry-icon';
 import { SunglassIcon } from '@components/icons/sunglass-icon';
 import { SneakerIcon } from '@components/icons/sneaker-icon';
 

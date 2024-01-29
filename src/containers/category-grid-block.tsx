@@ -58,34 +58,34 @@ const CategoryGridBlock: React.FC<CategoriesProps> = ({
               >
                 {isLoading
                   ? Array.from({ length: 6 }).map((_, idx) => (
-                      <SwiperSlide key={idx}>
-                        <CategoryCardLoader
-                          uniqueKey={`featured-category-${idx}`}
-                        />
-                      </SwiperSlide>
-                    ))
+                    <SwiperSlide key={idx}>
+                      <CategoryCardLoader
+                        uniqueKey={`featured-category-${idx}`}
+                      />
+                    </SwiperSlide>
+                  ))
                   : data?.map((category) => (
-                      <SwiperSlide key={`category--key${category.id}`}>
-                        <CategoryCard category={category} />
-                      </SwiperSlide>
-                    ))}
+                    <SwiperSlide key={`category--key${category._id}`}>
+                      <CategoryCard category={category} />
+                    </SwiperSlide>
+                  ))}
               </Carousel>
             </div>
           ) : (
             <div className="lg:grid lg:grid-cols-3 lg:gap-5 xl:gap-7">
               {isLoading
                 ? Array.from({ length: 6 }).map((_, idx) => (
-                    <CategoryCardLoader
-                      key={idx}
-                      uniqueKey={`featured-category-${idx}`}
-                    />
-                  ))
+                  <CategoryCardLoader
+                    key={idx}
+                    uniqueKey={`featured-category-${idx}`}
+                  />
+                ))
                 : data?.map((category) => (
-                    <CategoryCard
-                      key={`category--key${category.id}`}
-                      category={category}
-                    />
-                  ))}
+                  <CategoryCard
+                    key={`category--key${category._id}`}
+                    category={category}
+                  />
+                ))}
             </div>
           )}
         </>

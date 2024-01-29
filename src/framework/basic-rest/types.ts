@@ -52,6 +52,7 @@ export type Category = {
   status?: boolean;
   limit?: number;
   children: CategoriesQueryOptionsType[];
+  products?: ProductDetails[];
 };
 export type Collection = {
   id: number | string;

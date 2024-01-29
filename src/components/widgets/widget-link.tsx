@@ -22,7 +22,7 @@ interface Props {
 
 const WidgetLink: FC<Props> = ({ className, data }) => {
   const { widgetTitle, lists } = data;
-  const { logo, description } = data;
+  const { description } = data;
   const { t } = useTranslation('footer');
 
   return (
