@@ -24,7 +24,7 @@ const IconCard: React.FC<Props> = ({
   return (
     <Link
       href={href}
-      className={cn('group flex justify-center  rounded-lg', {
+      className={cn('group flex justify-center max-w-[40vw] rounded-lg', {
         'flex-col h-28 sm:h-[8.5rem] md:h-40 xl:h-[11.5rem] 2xl:h-44 3xl:h-60 bg-gray-200':
           variant === 'default',
         'flex-col px-6 lg:px-8 pt-7 lg:pt-10 pb-5 lg:pb-8 bg-gray-200':
@@ -46,9 +46,9 @@ const IconCard: React.FC<Props> = ({
       >
         <img
           src={icon}
-          alt={name || t('text-card-thumbnail')}
-          className={cn('mb-0', {
-            'mx-auto mb-4 sm:mb-6 w-2/4 sm:w-2/3 md:w-8/12 3xl:w-full':
+          alt={name.en || t('text-card-thumbnail')}
+          className={cn('mb-0 max-w-[30vw]', {
+            'mx-auto mb-4 sm:mb-6 w-2/4 sm:w-2/3 md:w-8/12 3xl:w-full w-64 h-64':
               variant === 'default',
             'mb-4 sm:mb-6 w-2/4': variant === 'modern',
             'transform scale-[0.6] lg:scale-75 2xl:scale-85 3xl:scale-90':
@@ -79,7 +79,7 @@ const IconCard: React.FC<Props> = ({
             'mb-1': variant === 'modern',
           })}
         >
-          {name}
+          {name.en}
         </Text>
 
         {(variant === 'modern' || variant === 'list') && (

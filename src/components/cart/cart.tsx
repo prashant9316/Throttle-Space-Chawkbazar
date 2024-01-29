@@ -18,7 +18,7 @@ export default function Cart() {
   const { items, total, isEmpty } = useCart();
   const { price: cartTotal } = usePrice({
     amount: total,
-    currencyCode: 'USD',
+    currencyCode: 'INR',
   });
   return (
     <div className="flex flex-col justify-between w-full h-full">

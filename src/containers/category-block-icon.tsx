@@ -101,9 +101,9 @@ const CategoryBlockIcon: React.FC<CategoriesProps> = ({
   sectionHeading,
   variant = 'default',
 }) => {
-  const { data, isLoading, error } = useCategoriesQuery({
-    limit: 10,
-  })
+  const { data, isLoading, error } = useCategoriesQuery({})
+  console.log("Categories data: ")
+  console.log(data)
 
   return (
     <div className={cn(className)}>
@@ -119,33 +119,33 @@ const CategoryBlockIcon: React.FC<CategoriesProps> = ({
             variant === 'circle'
               ? breakpointsCircle
               : variant === 'list'
-              ? breakpointsList
-              : breakpoints
+                ? breakpointsList
+                : breakpoints
           }
           buttonGroupClassName={variant === 'circle' ? '-mt-4' : '-mt-2'}
         >
           {isLoading && !data
-            ? Array.from({ length: 10 }).map((_, idx) => {
-                return (
-                  <SwiperSlide key={`card-rounded-${idx}`}>
-                    {variant === 'circle' ? (
-                      <CardRoundedLoader uniqueKey={`card-circle-${idx}`} />
-                    ) : (
-                      <CardIconLoader uniqueKey={`card-rounded-${idx}`} />
-                    )}
-                  </SwiperSlide>
-                )
-              })
-            : data?.categories?.data?.map((category: Category) => (
-                <SwiperSlide key={`category--icon-key-${category.id}`}>
-                  <IconCard
-                    item={category}
-                    href={`${ROUTES.CATEGORY}/${category.slug}`}
-                    effectActive={true}
-                    variant={variant}
-                  />
+            ? Array.from({ length: 5 }).map((_, idx) => {
+              return (
+                <SwiperSlide key={`card-rounded-${idx}`}>
+                  {variant === 'circle' ? (
+                    <CardRoundedLoader uniqueKey={`card-circle-${idx}`} />
+                  ) : (
+                    <CardIconLoader uniqueKey={`card-rounded-${idx}`} />
+                  )}
                 </SwiperSlide>
-              ))}
+              )
+            })
+            : data?.categories?.data?.map((category: Category) => (
+              <SwiperSlide key={`category--icon-key-${category._id}`}>
+                <IconCard
+                  item={category}
+                  href={`${ROUTES.CATEGORY}/${category.name.en}`}
+                  effectActive={true}
+                  variant={variant}
+                />
+              </SwiperSlide>
+            ))}
         </Carousel>
       )}
     </div>

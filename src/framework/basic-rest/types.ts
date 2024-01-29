@@ -1,5 +1,5 @@
 import { QueryKey } from '@tanstack/react-query';
-import exp from 'constants';
+// import exp from 'constants';
 
 export type CollectionsQueryOptionsType = {
   text?: string;
@@ -9,11 +9,7 @@ export type CollectionsQueryOptionsType = {
 };
 
 export type CategoriesQueryOptionsType = {
-  text?: string;
-  category?: string;
-  status?: string;
-  limit?: number;
-  demoVariant?: 'ancient';
+
 };
 export type ProductsQueryOptionsType = {
   type: string;
@@ -47,14 +43,15 @@ export type Attachment = {
   original: string;
 };
 export type Category = {
-  id: number | string;
-  name: string;
-  slug: string;
-  details?: string;
-  image?: Attachment;
-  icon?: string;
-  products?: Product[];
-  productCount?: number;
+  _id: string;
+  name: title;
+  description: title;
+  icon: string;
+  text?: string;
+  category?: string;
+  status?: boolean;
+  limit?: number;
+  children: CategoriesQueryOptionsType[];
 };
 export type Collection = {
   id: number | string;
@@ -184,6 +181,20 @@ interface Categories {
   updatedAt: string
 }
 
+interface Variants {
+  key?: string;
+  value: title;
+  price: number;
+  name: title;
+  originalPrice: number;
+  discount: number;
+  stock: number;
+  sku: string;
+  image: string;
+  productId: string;
+  barcode: string;
+}
+
 export type FetchCategories = {
   visible: boolean;
   productRef: String[];
@@ -243,7 +254,7 @@ export type ProductDetails = {
   stock: number;
   tag: string[];
   title: title;
-  variants?: object;
+  variants?: Variants[];
   gallery?: string[];
   limit?: number;
 };

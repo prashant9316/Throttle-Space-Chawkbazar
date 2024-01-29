@@ -49,40 +49,40 @@ export default function Home() {
           sectionHeading="text-browse-categories"
           variant="list"
         />
-        <SaleBannerGrid
+        {/* <SaleBannerGrid
           data={bannerDataContemporary}
           className="mb-12 md:mb-14 xl:mb-16"
-        />
+        /> */}
         <NewArrivalsProductFeedWithTabs />
-        <BrandTimerBlock
+        {/* <BrandTimerBlock
           sectionHeading="text-top-brands-deal"
           className="mb-12 md:mb-14 xl:mb-16"
-        />
-        <ProductsFeatured
+        /> */}
+        {/* <ProductsFeatured
           limit={3}
           variant="modern"
           sectionHeading="text-featured-products"
-        />
+        /> */}
         <BannerCard
           key={`banner--key${banner.id}`}
           banner={contemporaryBanner1}
           href={`${ROUTES.COLLECTIONS}/${banner.slug}`}
           className="mb-12 md:mb-14 xl:mb-16 pb-0.5 md:pb-0 lg:pb-1 xl:pb-0 md:-mt-2.5"
         />
-        <TrendingProductFeedWithTabs />
-        <BannerCard
+        {/* <TrendingProductFeedWithTabs /> */}
+        {/* <BannerCard
           key={`banner--key1${banner.id}`}
           banner={contemporaryBanner2}
           href={`${ROUTES.COLLECTIONS}/${banner.slug}`}
           className="mb-12 md:mb-14 xl:mb-16 pb-0.5 md:pb-0 lg:pb-1 xl:pb-0 md:-mt-2.5"
-        />
+        /> */}
 
-        <CollectionBlock
+        {/* <CollectionBlock
           variant="trendy"
           data={collection}
           sectionHeading="text-trending-collection"
-        />
-        <RecentProductFeed />
+        /> */}
+        {/* <RecentProductFeed /> */}
         {/* <DownloadApps
           className="mb-12 bg-app-pattern md:mb-14 xl:mb-16"
           variant="modern"
