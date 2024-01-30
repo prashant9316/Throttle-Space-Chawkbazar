@@ -13,7 +13,7 @@ import ProductCompareIcon from '@components/icons/product-compare-icon';
 import RatingDisplay from '@components/common/rating-display';
 
 interface ProductProps {
-  product: ProductDetails;
+  product?: ProductDetails;
   className?: string;
   contactClassName?: string;
   imageContentClassName?: string;
@@ -56,6 +56,7 @@ const ProductCard: FC<ProductProps> = ({
   demoVariant,
   disableBorderRadius = false,
 }) => {
+  if (!product) return null;
   const { openModal, setModalView, setModalData } = useUI();
   const placeholderImage = `/assets/placeholder/products/product-${variant}.svg`;
   // const { price, basePrice, discount } = usePrice({
