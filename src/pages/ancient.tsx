@@ -2,20 +2,20 @@ import HeroSlider from '@containers/hero-slider';
 import Container from '@components/ui/container';
 import Layout from '@components/layout/layout';
 import Subscription from '@components/common/subscription';
-import ProductsFeatured from '@containers/products-featured';
+// import ProductsFeatured from '@containers/products-featured';
 import BannerBlockAncient from '@containers/banner-block-ancient';
-import BrandBlock from '@containers/brand-block';
+// import BrandBlock from '@containers/brand-block';
 // import Divider from '@components/ui/divider';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetStaticProps } from 'next';
 import { ancientHeroBanner } from '@framework/static/banner';
-import NewArrivalsProductFeed from '@components/product/feeds/new-arrivals-product-feed';
-import PopularProductFeed from '@components/product/feeds/popular-product-feed';
+// import NewArrivalsProductFeed from '@components/product/feeds/new-arrivals-product-feed';
+// import PopularProductFeed from '@components/product/feeds/popular-product-feed';
 import TestimonialCarousel from '@containers/testimonial-carousel';
 import Instagram from '@components/common/instagram';
 import DownloadApps from '@components/common/download-apps';
-import CategoryBlock from '@containers/category-block';
-import ProductsFlashSaleBlock from '@containers/product-flash-sale-block';
+// import CategoryBlock from '@containers/category-block';
+// import ProductsFlashSaleBlock from '@containers/product-flash-sale-block';
 import HireDesignerAncient from '@containers/buy-designer-ancient';
 
 export default function Ancient() {
@@ -32,7 +32,7 @@ export default function Ancient() {
       />
 
       <Container>
-        <CategoryBlock
+        {/* <CategoryBlock
           type="rounded"
           sectionHeading="Browse Categories"
           roundedItemCount={5}
@@ -50,7 +50,7 @@ export default function Ancient() {
           showRating={true}
           disableBorderRadius={true}
           className={sectionCommonStyle}
-        />
+        /> */}
 
         <BannerBlockAncient
           disableBorderRadius={true}
@@ -60,7 +60,7 @@ export default function Ancient() {
           className={sectionCommonStyle}
         />
 
-        <ProductsFeatured
+        {/* <ProductsFeatured
           sectionHeading="text-featured-products"
           limit={4}
           variant="modern"
@@ -68,7 +68,7 @@ export default function Ancient() {
           demoVariant="ancient"
           disableBorderRadius={true}
           className={sectionCommonStyle}
-        />
+        /> */}
 
         <BannerBlockAncient
           // className={`${sectionCommonStyle} lg:pb-1 xl:pb-0`}
@@ -78,7 +78,7 @@ export default function Ancient() {
           className={sectionCommonStyle}
         />
 
-        <BrandBlock
+        {/* <BrandBlock
           disableBorderRadius={true}
           sectionHeading="text-top-brands"
           showName={false}
@@ -97,17 +97,17 @@ export default function Ancient() {
           disableBorderRadius={true}
           className={sectionCommonStyle}
           bgGray={true}
-        />
+        /> */}
       </Container>
 
       <HireDesignerAncient />
 
       <Container>
-        <PopularProductFeed
+        {/* <PopularProductFeed
           disableBorderRadius={true}
           demoVariant="ancient"
           className={sectionCommonStyle}
-        />
+        /> */}
 
         <DownloadApps
           disableBorderRadius={true}
