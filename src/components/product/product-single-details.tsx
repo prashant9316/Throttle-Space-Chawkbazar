@@ -157,7 +157,7 @@ const ProductSingleDetails: React.FC = () => {
           <p className="text-body text-sm lg:text-base leading-6 lg:leading-8">
             {data?.description.en}
           </p>
-          {/* <div className="flex items-center mt-5">
+          <div className="flex items-center mt-5">
             <div className="text-heading font-bold text-base md:text-xl lg:text-2xl 2xl:text-4xl ltr:pr-2 rtl:pl-2 ltr:md:pr-0 rtl:md:pl-0 ltr:lg:pr-2 rtl:lg:pl-2 ltr:2xl:pr-0 rtl:2xl:pl-0">
               ₹{data?.prices.price}/-
             </div>
@@ -166,7 +166,7 @@ const ProductSingleDetails: React.FC = () => {
                 ₹{data?.prices.originalPrice}/-
               </span>
             )}
-          </div> */}
+          </div>
         </div>
 
         <div className="pb-3 border-b border-gray-300 grid grid-cols-5 ">
