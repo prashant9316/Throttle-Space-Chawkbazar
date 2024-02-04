@@ -435,6 +435,7 @@ export const siteSettings = {
           {
             id: 4,
             label: 'Heat Shrink Tubes',
+            path: '/'
           },
         ],
       },
