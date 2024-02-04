@@ -4,17 +4,17 @@ import { CNFlag } from '@components/icons/CNFlag';
 import { USFlag } from '@components/icons/USFlag';
 import { DEFlag } from '@components/icons/DEFlag';
 import { ESFlag } from '@components/icons/ESFlag';
-import Nike from 'public/assets/images/brands/megamenu/nike.png';
-import Dior from 'public/assets/images/brands/megamenu/dior.png';
-import Gucci from 'public/assets/images/brands/megamenu/gucci.png';
-import Gucci1 from 'public/assets/images/brands/megamenu/gucci1.png';
-import Puma from 'public/assets/images/brands/megamenu/puma.png';
-import Levis from 'public/assets/images/brands/megamenu/levis.png';
-import Banner1 from 'public/assets/images/banner/megamenu/banner-1.png';
-import Banner2 from 'public/assets/images/banner/megamenu/banner-2.png';
+// import Nike from 'public/assets/images/brands/megamenu/nike.png';
+// import Dior from 'public/assets/images/brands/megamenu/dior.png';
+// import Gucci from 'public/assets/images/brands/megamenu/gucci.png';
+// import Gucci1 from 'public/assets/images/brands/megamenu/gucci1.png';
+// import Puma from 'public/assets/images/brands/megamenu/puma.png';
+// import Levis from 'public/assets/images/brands/megamenu/levis.png';
+// import Banner1 from 'public/assets/images/banner/megamenu/banner-1.png';
+// import Banner2 from 'public/assets/images/banner/megamenu/banner-2.png';
 
 import { ThunderIcon } from '@components/icons/thunder-icon';
-import { WomenIcon } from '@components/icons/women-icon';
+// import { WomenIcon } from '@components/icons/women-icon';
 // import { MenIcon } from '@ck
 import { SunglassIcon } from '@components/icons/sunglass-icon';
 import { SneakerIcon } from '@components/icons/sneaker-icon';
@@ -24,8 +24,8 @@ export const siteSettings = {
   name: 'ThrottleSpace',
   description: 'One Stop for all FPV Gear.',
   author: {
-    name: 'Prashant Mishra',
-    websiteUrl: 'https://prashant9316.github.io/profile/',
+    name: 'Trinity Systems Pvt. Ltd.',
+    websiteUrl: 'throttlespace.com',
     address: '',
   },
   logo: {
@@ -40,288 +40,204 @@ export const siteSettings = {
   site_header: {
     menu: [
       {
-        id: 2,
-        path: '/search?q=men-wear',
-        label: 'Frames',
-        columns: [
-          {
-            id: 1,
-            columnItems: [
-              {
-                id: 1,
-                path: '/search?q=top-wear',
-                label: '5 inch Frames',
-                columnItemItems: [
-                  {
-                    id: 1,
-                    path: '/search?q=t-shit-shirtrt',
-                    label: 'Frame Sub-category',
-                  },
-                  {
-                    id: 2,
-                    path: '/search?q=casual-shirts',
-                    label: 'Frame Sub-category 2',
-                  },
-                  {
-                    id: 3,
-                    path: '/search?q=formal-shirts',
-                    label: 'Frame Sub-category 3',
-                  },
-                  {
-                    id: 4,
-                    path: '/search?q=blazwers-coats',
-                    label: 'Frame Sub-category 4',
-                  }
-                ],
-              },
-              {
-                id: 2,
-                path: '/search?q=belt-scarves',
-                label: 'Frame Accessories',
-              },
-              {
-                id: 3,
-                path: '/search?q=watches-wearables',
-                label: 'Tools',
-              },
-            ],
-          },
-          {
-            id: 2,
-            columnItems: [
-              {
-                id: 1,
-                path: '/search?q=western-wear',
-                label: 'Whoops',
-                columnItemItems: [
-                  {
-                    id: 1,
-                    path: '/search?q=dresses',
-                    label: 'Cine Whoop',
-                  },
-                  {
-                    id: 2,
-                    path: '/search?q=jumpsuits',
-                    label: 'Frame Sub-category 2',
-                  },
-                  {
-                    id: 3,
-                    path: '/search?q=tops-t-shirt',
-                    label: 'Frame Sub-category 3',
-                  }
-                ],
-              },
-              {
-                id: 2,
-                path: '/search?q=plus-size',
-                label: 'Whoop tools',
-              },
-              {
-                id: 3,
-                path: '/search?q=sunglasses-frames',
-                label: 'Whoop blogs',
-              },
-            ],
-          },
-          {
-            id: 3,
-            columnItems: [
-              {
-                id: 1,
-                path: '/search?q=footwear',
-                label: '3inch-5inch Frames',
-                columnItemItems: [
-                  {
-                    id: 1,
-                    path: '/search?q=flats',
-                    label: 'Frame Sub-category',
-                  },
-                  {
-                    id: 2,
-                    path: '/search?q=casual-shoes',
-                    label: 'Frame Sub-category 2',
-                  },
-                  {
-                    id: 3,
-                    path: '/search?q=heels',
-                    label: 'Frame Sub-category 3',
-                  },
-                  {
-                    id: 4,
-                    path: '/search?q=boots',
-                    label: 'Frame Sub-category 4',
-                  },
-                ],
-              },
-              {
-                id: 2,
-                path: '/search?q=sports-active-wear',
-                label: 'Long Range Frames',
-                columnItemItems: [
-                  {
-                    id: 1,
-                    path: '/search?q=clothing',
-                    label: '6inch Frames',
-                  },
-                  {
-                    id: 2,
-                    path: '/search?q=footwear',
-                    label: '7inch Frames',
-                  },
-                  {
-                    id: 3,
-                    path: '/search?q=sports-accessories',
-                    label: '10inch Frames',
-                  },
-                ],
-              },
-            ],
-          },
-          {
-            id: 4,
-            columnItems: [
-              {
-                id: 1,
-                path: '/search?q=lingerie-sleepwear',
-                label: 'Customized FPV',
-                columnItemItems: [
-                  {
-                    id: 1,
-                    path: '/search?q=bra',
-                    label: 'Ultra Long Range',
-                  },
-                  {
-                    id: 2,
-                    path: '/search?q=briefs',
-                    label: 'Quad Builder',
-                  },
-                  {
-                    id: 3,
-                    path: '/search?q=sleepwear',
-                    label: 'Connect with us',
-                  },
-                ],
-              },
-              {
-                id: 2,
-                path: '/search?q=belt-scarves',
-                label: 'Custom Frame',
-                columnItemItems: [
-                  {
-                    id: 1,
-                    path: '/search?q=makeup',
-                    label: 'Frame Sub-category',
-                  },
-                  {
-                    id: 2,
-                    path: '/search?q=skincare',
-                    label: 'Frame Sub-category 2',
-                  },
-                  {
-                    id: 3,
-                    path: '/search?q=premium-beauty',
-                    label: 'Frame Sub-category 3',
-                  },
-                  {
-                    id: 4,
-                    path: '/search?q=lipsticks',
-                    label: 'Frame Sub-category 4',
-                  },
-                ],
-              },
-            ],
-          }
-        ],
-      },
-      {
-        id: 4,
-        path: '/category/electronics',
-        label: 'Electronics',
-      },
-      {
-        id: 5,
-        path: '/category/radios',
-        label: 'Radios',
-      },
-      {
-        id: 6,
+        id: 1,
         path: '/',
-        label: 'menu-pages',
+        label: 'Frames',
         subMenu: [
           {
             id: 1,
             path: '/',
-            label: 'menu-users',
-            subMenu: [
-              {
-                id: 1,
-                path: '/my-account',
-                label: 'menu-my-account',
-              },
-              {
-                id: 2,
-                path: '/signin',
-                label: 'menu-sign-in',
-              },
-              {
-                id: 3,
-                path: '/signup',
-                label: 'menu-sign-up',
-              },
-              {
-                id: 4,
-                path: '/forget-password',
-                label: 'menu-forget-password',
-              },
-            ],
+            label: '1-2 Inch Frames',
           },
           {
             id: 2,
-            path: '/faq',
-            label: 'menu-faq',
+            path: '/',
+            label: '3-4 Inch Frames',
           },
           {
             id: 3,
-            path: '/privacy',
-            label: 'menu-privacy-policy',
+            path: '/',
+            label: '5-6 Inch Frames',
           },
           {
             id: 4,
-            path: '/terms',
-            label: 'menu-terms-condition',
+            path: '/',
+            label: '7-10 Inch Frames',
+          }
+        ],
+      },
+      {
+        id: 2,
+        path: '/category/electronics',
+        label: 'Electronics',
+        subMenu: [
+          {
+            id: 1,
+            path: '/',
+            label: 'Flight Controllers',
           },
           {
-            id: 5,
-            path: '/contact-us',
-            label: 'menu-contact-us',
+            id: 2,
+            path: '/',
+            label: 'Electronic Speed Controllers',
           },
           {
-            id: 6,
-            path: '/checkout',
-            label: 'menu-checkout',
+            id: 3,
+            path: '/',
+            label: 'Stacks',
           },
           {
-            id: 7,
-            path: '/collections/mens-collection',
-            label: 'menu-collection',
+            id: 4,
+            path: '/',
+            label: 'AIOs',
+          }
+        ]
+      },
+      {
+        id: 3,
+        path: '/category/radios',
+        label: 'Radios',
+      },
+      {
+        id: 4,
+        path: '/',
+        label: 'FPV Equipment',
+        subMenu: [
+          {
+            id: 1,
+            path: '/',
+            label: 'FPV Goggles',
           },
           {
-            id: 8,
-            path: '/category/man',
-            label: 'menu-category',
+            id: 2,
+            path: '/',
+            label: 'GPV Cameras',
           },
           {
-            id: 9,
-            path: '/order',
-            label: 'menu-order',
+            id: 3,
+            path: '/',
+            label: 'VTX',
           },
           {
-            id: 10,
-            path: '/404',
-            label: 'menu-404',
+            id: 3,
+            path: '/',
+            label: 'VRX',
+          }
+        ],
+      },
+      {
+        id: 5,
+        path: '/',
+        label: 'Motors',
+        subMenu: [
+          {
+            id: 1,
+            path: '/',
+            label: 'Micro Motors',
+          },
+          {
+            id: 2,
+            path: '/',
+            label: 'Mini Motors',
+          },
+          {
+            id: 3,
+            path: '/',
+            label: 'Long Range',
+          }
+        ],
+      },
+      {
+        id: 6,
+        path: '/',
+        label: 'Batteries',
+        subMenu: [
+          {
+            id: 1,
+            path: '/',
+            label: '1S Batteries',
+          },
+          {
+            id: 2,
+            path: '/',
+            label: '2S Batteries',
+          },
+          {
+            id: 3,
+            path: '/',
+            label: '3S Batteries',
+          },
+          {
+            id: 3,
+            path: '/',
+            label: '4S Batteries',
+          },
+          {
+            id: 3,
+            path: '/',
+            label: '6S Batteries',
+          },
+          {
+            id: 3,
+            path: '/',
+            label: 'Li-Ion Batteries',
+          },
+          {
+            id: 3,
+            path: '/',
+            label: 'Custom Packs',
           },
         ],
       },
+      {
+        id: 7,
+        path: '/',
+        label: 'RTF & PNP',
+        subMenu: [
+          {
+            id: 1,
+            path: '/',
+            label: 'Ready to Fly Builds',
+          },
+          {
+            id: 2,
+            path: '/',
+            label: 'Customize your build',
+          },
+          {
+            id: 3,
+            path: '/',
+            label: 'ThrottleSpace Exclusives',
+          }
+        ],
+      },
+      {
+        id: 7,
+        label: "Tools & Accessories",
+        path: "/",
+        subMenu: [
+          {
+            id: 1,
+            label: 'Multimeters',
+            path: '/',
+          },
+          {
+            id: 1,
+            label: 'Tools',
+            path: '/',
+          },
+          {
+            id: 1,
+            label: 'Soldering Irons',
+            path: '/',
+          },
+          {
+            id: 1,
+            label: 'Heat Shrink Tubes',
+            path: '/',
+          },
+        ]
+      }
     ],
     mobileMenu: [
       {
@@ -707,320 +623,320 @@ export const siteSettings = {
       },
     ],
     categoryMenu: [
-      {
-        id: 1,
-        path: '/',
-        label: 'Frames',
-        icon: <WomenIcon />,
-        columns: [
-          {
-            id: 1,
-            columnItems: [
-              {
-                id: 1,
-                path: '/search?q=top-wear',
-                label: 'Frame by size',
-                columnItemItems: [
-                  {
-                    id: 1,
-                    path: '/search?q=t-shit-shirtrt',
-                    label: '1-2 inch Frames',
-                  },
-                  {
-                    id: 2,
-                    path: '/search?q=casual-shirts',
-                    label: '3-5 inch Frames',
-                  },
-                  {
-                    id: 3,
-                    path: '/search?q=formal-shirts',
-                    label: '6-10 inch Frames',
-                  }
-                ],
-              },
-              {
-                id: 2,
-                path: '/search?q=belt-scarves',
-                label: 'Frame Tools',
-              }
-            ],
-          },
-          {
-            id: 2,
-            columnItems: [
-              {
-                id: 1,
-                path: '/search?q=western-wear',
-                label: 'menu-western-wear',
-                columnItemItems: [
-                  {
-                    id: 1,
-                    path: '/search?q=dresses',
-                    label: 'menu-dresses',
-                  },
-                  {
-                    id: 2,
-                    path: '/search?q=jumpsuits',
-                    label: 'menu-jumpsuits',
-                  },
-                  {
-                    id: 3,
-                    path: '/search?q=tops-t-shirt',
-                    label: 'menu-tops-shirts',
-                  },
-                  {
-                    id: 4,
-                    path: '/search?q=shorts-skirts',
-                    label: 'menu-shorts-skirts',
-                  },
-                  {
-                    id: 5,
-                    path: '/search?q=shurgs',
-                    label: 'menu-shurgs',
-                  },
-                  {
-                    id: 6,
-                    path: '/search?q=blazers',
-                    label: 'menu-blazers',
-                  },
-                ],
-              },
-              {
-                id: 2,
-                path: '/search?q=plus-size',
-                label: 'menu-plus-size',
-              },
-              {
-                id: 3,
-                path: '/search?q=sunglasses-frames',
-                label: 'menu-sunglasses-frames',
-              },
-            ],
-          },
-          {
-            id: 3,
-            columnItems: [
-              {
-                id: 1,
-                path: '/search?q=footwear',
-                label: 'menu-footwear',
-                columnItemItems: [
-                  {
-                    id: 1,
-                    path: '/search?q=flats',
-                    label: 'menu-flats',
-                  },
-                  {
-                    id: 2,
-                    path: '/search?q=casual-shoes',
-                    label: 'menu-casual-shoes',
-                  },
-                  {
-                    id: 3,
-                    path: '/search?q=heels',
-                    label: 'menu-heels',
-                  },
-                  {
-                    id: 4,
-                    path: '/search?q=boots',
-                    label: 'menu-boots',
-                  },
-                ],
-              },
-              {
-                id: 2,
-                path: '/search?q=sports-active-wear',
-                label: 'menu-sports-active-wear',
-                columnItemItems: [
-                  {
-                    id: 1,
-                    path: '/search?q=clothing',
-                    label: 'menu-clothing',
-                  },
-                  {
-                    id: 2,
-                    path: '/search?q=footwear',
-                    label: 'menu-footwear',
-                  },
-                  {
-                    id: 3,
-                    path: '/search?q=sports-accessories',
-                    label: 'menu-sports-accessories',
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-        brands: [
-          {
-            id: 1,
-            path: '/search?q=nike',
-            label: 'nike',
-            icon: Nike,
-          },
-          {
-            id: 2,
-            path: '/search?q=dior',
-            label: 'dior',
-            icon: Dior,
-          },
-          {
-            id: 3,
-            path: '/search?q=gucci',
-            label: 'gucci',
-            icon: Gucci,
-          },
-          {
-            id: 4,
-            path: '/search?q=gucci1',
-            label: 'gucci1',
-            icon: Gucci1,
-          },
-          {
-            id: 5,
-            path: '/search?q=puma',
-            label: 'puma',
-            icon: Puma,
-          },
-          {
-            id: 6,
-            path: '/search?q=levis',
-            label: 'levis',
-            icon: Levis,
-          },
-        ],
-        banners: [
-          {
-            id: 1,
-            path: '/search?q=winter',
-            label: 'winter',
-            image: Banner1,
-          },
-          {
-            id: 2,
-            path: '/search?q=summer',
-            label: 'summer',
-            image: Banner2,
-          },
-        ],
-      },
+      // {
+      //   id: 1,
+      //   path: '/',
+      //   label: 'Frames',
+      //   icon: <WomenIcon />,
+      //   columns: [
+      //     {
+      //       id: 1,
+      //       columnItems: [
+      //         {
+      //           id: 1,
+      //           path: '/search?q=top-wear',
+      //           label: 'Frame by size',
+      //           columnItemItems: [
+      //             {
+      //               id: 1,
+      //               path: '/search?q=t-shit-shirtrt',
+      //               label: '1-2 inch Frames',
+      //             },
+      //             {
+      //               id: 2,
+      //               path: '/search?q=casual-shirts',
+      //               label: '3-5 inch Frames',
+      //             },
+      //             {
+      //               id: 3,
+      //               path: '/search?q=formal-shirts',
+      //               label: '6-10 inch Frames',
+      //             }
+      //           ],
+      //         },
+      //         {
+      //           id: 2,
+      //           path: '/search?q=belt-scarves',
+      //           label: 'Frame Tools',
+      //         }
+      //       ],
+      //     },
+      //     {
+      //       id: 2,
+      //       columnItems: [
+      //         {
+      //           id: 1,
+      //           path: '/search?q=western-wear',
+      //           label: 'menu-western-wear',
+      //           columnItemItems: [
+      //             {
+      //               id: 1,
+      //               path: '/search?q=dresses',
+      //               label: 'menu-dresses',
+      //             },
+      //             {
+      //               id: 2,
+      //               path: '/search?q=jumpsuits',
+      //               label: 'menu-jumpsuits',
+      //             },
+      //             {
+      //               id: 3,
+      //               path: '/search?q=tops-t-shirt',
+      //               label: 'menu-tops-shirts',
+      //             },
+      //             {
+      //               id: 4,
+      //               path: '/search?q=shorts-skirts',
+      //               label: 'menu-shorts-skirts',
+      //             },
+      //             {
+      //               id: 5,
+      //               path: '/search?q=shurgs',
+      //               label: 'menu-shurgs',
+      //             },
+      //             {
+      //               id: 6,
+      //               path: '/search?q=blazers',
+      //               label: 'menu-blazers',
+      //             },
+      //           ],
+      //         },
+      //         {
+      //           id: 2,
+      //           path: '/search?q=plus-size',
+      //           label: 'menu-plus-size',
+      //         },
+      //         {
+      //           id: 3,
+      //           path: '/search?q=sunglasses-frames',
+      //           label: 'menu-sunglasses-frames',
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       id: 3,
+      //       columnItems: [
+      //         {
+      //           id: 1,
+      //           path: '/search?q=footwear',
+      //           label: 'menu-footwear',
+      //           columnItemItems: [
+      //             {
+      //               id: 1,
+      //               path: '/search?q=flats',
+      //               label: 'menu-flats',
+      //             },
+      //             {
+      //               id: 2,
+      //               path: '/search?q=casual-shoes',
+      //               label: 'menu-casual-shoes',
+      //             },
+      //             {
+      //               id: 3,
+      //               path: '/search?q=heels',
+      //               label: 'menu-heels',
+      //             },
+      //             {
+      //               id: 4,
+      //               path: '/search?q=boots',
+      //               label: 'menu-boots',
+      //             },
+      //           ],
+      //         },
+      //         {
+      //           id: 2,
+      //           path: '/search?q=sports-active-wear',
+      //           label: 'menu-sports-active-wear',
+      //           columnItemItems: [
+      //             {
+      //               id: 1,
+      //               path: '/search?q=clothing',
+      //               label: 'menu-clothing',
+      //             },
+      //             {
+      //               id: 2,
+      //               path: '/search?q=footwear',
+      //               label: 'menu-footwear',
+      //             },
+      //             {
+      //               id: 3,
+      //               path: '/search?q=sports-accessories',
+      //               label: 'menu-sports-accessories',
+      //             },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //   ],
+      //   brands: [
+      //     {
+      //       id: 1,
+      //       path: '/search?q=nike',
+      //       label: 'nike',
+      //       icon: Nike,
+      //     },
+      //     {
+      //       id: 2,
+      //       path: '/search?q=dior',
+      //       label: 'dior',
+      //       icon: Dior,
+      //     },
+      //     {
+      //       id: 3,
+      //       path: '/search?q=gucci',
+      //       label: 'gucci',
+      //       icon: Gucci,
+      //     },
+      //     {
+      //       id: 4,
+      //       path: '/search?q=gucci1',
+      //       label: 'gucci1',
+      //       icon: Gucci1,
+      //     },
+      //     {
+      //       id: 5,
+      //       path: '/search?q=puma',
+      //       label: 'puma',
+      //       icon: Puma,
+      //     },
+      //     {
+      //       id: 6,
+      //       path: '/search?q=levis',
+      //       label: 'levis',
+      //       icon: Levis,
+      //     },
+      //   ],
+      //   banners: [
+      //     {
+      //       id: 1,
+      //       path: '/search?q=winter',
+      //       label: 'winter',
+      //       image: Banner1,
+      //     },
+      //     {
+      //       id: 2,
+      //       path: '/search?q=summer',
+      //       label: 'summer',
+      //       image: Banner2,
+      //     },
+      //   ],
+      // },
 
       {
         id: 7,
         path: '/',
         label: 'Electronics',
         icon: <SunglassIcon />,
-        brands: [
-          {
-            id: 1,
-            path: '/search?q=nike',
-            label: 'nike',
-            icon: Nike,
-          },
-          {
-            id: 2,
-            path: '/search?q=dior',
-            label: 'dior',
-            icon: Dior,
-          },
-          {
-            id: 3,
-            path: '/search?q=gucci',
-            label: 'gucci',
-            icon: Gucci,
-          },
-          {
-            id: 4,
-            path: '/search?q=gucci1',
-            label: 'gucci1',
-            icon: Gucci1,
-          },
-          {
-            id: 5,
-            path: '/search?q=puma',
-            label: 'puma',
-            icon: Puma,
-          },
-          {
-            id: 6,
-            path: '/search?q=levis',
-            label: 'levis',
-            icon: Levis,
-          },
-        ],
-        banners: [
-          {
-            id: 1,
-            path: '/search?q=winter',
-            label: 'winter',
-            image: Banner1,
-          },
-          {
-            id: 2,
-            path: '/search?q=summer',
-            label: 'summer',
-            image: Banner2,
-          },
-        ],
+        // brands: [
+        //   {
+        //     id: 1,
+        //     path: '/search?q=nike',
+        //     label: 'nike',
+        //     icon: Nike,
+        //   },
+        //   {
+        //     id: 2,
+        //     path: '/search?q=dior',
+        //     label: 'dior',
+        //     icon: Dior,
+        //   },
+        //   {
+        //     id: 3,
+        //     path: '/search?q=gucci',
+        //     label: 'gucci',
+        //     icon: Gucci,
+        //   },
+        //   {
+        //     id: 4,
+        //     path: '/search?q=gucci1',
+        //     label: 'gucci1',
+        //     icon: Gucci1,
+        //   },
+        //   {
+        //     id: 5,
+        //     path: '/search?q=puma',
+        //     label: 'puma',
+        //     icon: Puma,
+        //   },
+        //   {
+        //     id: 6,
+        //     path: '/search?q=levis',
+        //     label: 'levis',
+        //     icon: Levis,
+        //   },
+        // ],
+        // banners: [
+        //   {
+        //     id: 1,
+        //     path: '/search?q=winter',
+        //     label: 'winter',
+        //     image: Banner1,
+        //   },
+        //   {
+        //     id: 2,
+        //     path: '/search?q=summer',
+        //     label: 'summer',
+        //     image: Banner2,
+        //   },
+        // ],
       },
       {
         id: 8,
         path: '/',
         label: 'Radios',
         icon: <SneakerIcon />,
-        brands: [
-          {
-            id: 1,
-            path: '/search?q=nike',
-            label: 'nike',
-            icon: Nike,
-          },
-          {
-            id: 2,
-            path: '/search?q=dior',
-            label: 'dior',
-            icon: Dior,
-          },
-          {
-            id: 3,
-            path: '/search?q=gucci',
-            label: 'gucci',
-            icon: Gucci,
-          },
-          {
-            id: 4,
-            path: '/search?q=gucci1',
-            label: 'gucci1',
-            icon: Gucci1,
-          },
-          {
-            id: 5,
-            path: '/search?q=puma',
-            label: 'puma',
-            icon: Puma,
-          },
-          {
-            id: 6,
-            path: '/search?q=levis',
-            label: 'levis',
-            icon: Levis,
-          },
-        ],
-        banners: [
-          {
-            id: 1,
-            path: '/search?q=winter',
-            label: 'winter',
-            image: Banner1,
-          },
-          {
-            id: 2,
-            path: '/search?q=summer',
-            label: 'summer',
-            image: Banner2,
-          },
-        ],
+        // brands: [
+        //   {
+        //     id: 1,
+        //     path: '/search?q=nike',
+        //     label: 'nike',
+        //     icon: Nike,
+        //   },
+        //   {
+        //     id: 2,
+        //     path: '/search?q=dior',
+        //     label: 'dior',
+        //     icon: Dior,
+        //   },
+        //   {
+        //     id: 3,
+        //     path: '/search?q=gucci',
+        //     label: 'gucci',
+        //     icon: Gucci,
+        //   },
+        //   {
+        //     id: 4,
+        //     path: '/search?q=gucci1',
+        //     label: 'gucci1',
+        //     icon: Gucci1,
+        //   },
+        //   {
+        //     id: 5,
+        //     path: '/search?q=puma',
+        //     label: 'puma',
+        //     icon: Puma,
+        //   },
+        //   {
+        //     id: 6,
+        //     path: '/search?q=levis',
+        //     label: 'levis',
+        //     icon: Levis,
+        //   },
+        // ],
+        // banners: [
+        //   {
+        //     id: 1,
+        //     path: '/search?q=winter',
+        //     label: 'winter',
+        //     image: Banner1,
+        //   },
+        //   {
+        //     id: 2,
+        //     path: '/search?q=summer',
+        //     label: 'summer',
+        //     image: Banner2,
+        //   },
+        // ],
       },
     ],
     pagesMenu: [

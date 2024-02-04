@@ -213,31 +213,31 @@ export const footerContemporary = {
       id: 0,
       isCompanyIntroduction: true,
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+        'ThrottleSpace - The best place to find the latest & greatest in the world of fpv racing drones',
 
       lists: [
         {
           id: 1,
           title: 'link-instagram',
-          path: 'https://www.instagram.com/redqinc/',
+          path: 'https://www.instagram.com/throttlespace/',
           icon: <IoLogoInstagram />,
         },
-        {
-          id: 2,
-          title: 'link-twitter',
-          path: 'https://twitter.com/redqinc',
-          icon: <IoLogoTwitter />,
-        },
+        // {
+        //   id: 2,
+        //   title: 'link-twitter',
+        //   path: 'https://twitter.com/redqinc',
+        //   icon: <IoLogoTwitter />,
+        // },
         {
           id: 3,
           title: 'link-facebook',
-          path: 'https://www.facebook.com/redqinc/',
+          path: 'https://www.facebook.com/throttlespace/',
           icon: <IoLogoFacebook />,
         },
         {
           id: 4,
           title: 'link-youtube',
-          path: 'https://www.youtube.com/channel/UCjld1tyVHRNy_pe3ROLiLhw',
+          path: 'https://www.youtube.com/',
           icon: <IoLogoYoutube />,
         },
       ],
@@ -249,25 +249,25 @@ export const footerContemporary = {
         {
           id: 1,
           title: 'link-instagram',
-          path: 'https://www.instagram.com/redqinc/',
+          path: 'https://www.instagram.com/throttlespace/',
           icon: <IoLogoInstagram />,
         },
-        {
-          id: 2,
-          title: 'link-twitter',
-          path: 'https://twitter.com/redqinc',
-          icon: <IoLogoTwitter />,
-        },
+        // {
+        //   id: 2,
+        //   title: 'link-twitter',
+        //   path: 'https://twitter.com/redqinc',
+        //   icon: <IoLogoTwitter />,
+        // },
         {
           id: 3,
           title: 'link-facebook',
-          path: 'https://www.facebook.com/redqinc/',
+          path: 'https://www.facebook.com/throttlespace/',
           icon: <IoLogoFacebook />,
         },
         {
           id: 4,
           title: 'link-youtube',
-          path: 'https://www.youtube.com/channel/UCjld1tyVHRNy_pe3ROLiLhw',
+          path: 'https://www.youtube.com/',
           icon: <IoLogoYoutube />,
         },
       ],
