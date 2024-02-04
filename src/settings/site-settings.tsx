@@ -18,6 +18,7 @@ import { WomenIcon } from '@components/icons/women-icon';
 // import { MenIcon } from '@ck
 import { SunglassIcon } from '@components/icons/sunglass-icon';
 import { SneakerIcon } from '@components/icons/sneaker-icon';
+import { ThaiFlag } from '@components/icons/ThailFlag';
 
 export const siteSettings = {
   name: 'ThrottleSpace',
@@ -684,7 +685,7 @@ export const siteSettings = {
         id: 'th',
         name: 'แบบไทย - TH',
         value: 'th',
-        icon: <USFlag width="20px" height="15px" />,
+        icon: <ThaiFlag width="20px" height="15px" />,
       },
       {
         id: 'de',

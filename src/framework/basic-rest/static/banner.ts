@@ -1308,16 +1308,16 @@ export const homeEightWinterBanner = {
 export const homeContemporaryHeroSlider = [
   {
     id: 1,
-    title: 'We picked every item with care you must try',
-    slug: 'winter-collection',
+    title: 'Welcome to ThrottleSpace FPV Store',
+    slug: '/',
     image: {
       mobile: {
-        url: '/assets/images/hero/banner-mobile-10.png',
+        url: '/assets/images/hero/poster1.png',
         width: 900,
         height: 540,
       },
       desktop: {
-        url: '/assets/images/hero/banner-10.png',
+        url: '/assets/images/hero/poster1.png',
         width: 1920,
         height: 900,
       },
@@ -1325,38 +1325,22 @@ export const homeContemporaryHeroSlider = [
   },
   {
     id: 2,
-    title: 'We picked every item with care you must try',
-    slug: 'winter-collection',
+    title: 'Get Your own Customized Li-Ion battery Pack',
+    slug: 'batteries/custom-packs',
     image: {
       mobile: {
-        url: '/assets/images/hero/banner-mobile-11.png',
+        url: '/assets/images/hero/poster2.png',
         width: 900,
         height: 540,
       },
       desktop: {
-        url: '/assets/images/hero/banner-11.png',
+        url: '/assets/images/hero/poster2.png',
         width: 1920,
         height: 900,
       },
     },
   },
-  {
-    id: 3,
-    title: 'We picked every item with care you must try',
-    slug: 'winter-collection',
-    image: {
-      mobile: {
-        url: '/assets/images/hero/banner-mobile-12.png',
-        width: 900,
-        height: 540,
-      },
-      desktop: {
-        url: '/assets/images/hero/banner-12.png',
-        width: 1920,
-        height: 900,
-      },
-    },
-  },
+
 ];
 
 export const bannerDataContemporary = [
