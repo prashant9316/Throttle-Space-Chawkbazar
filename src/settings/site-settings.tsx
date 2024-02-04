@@ -413,7 +413,7 @@ export const siteSettings = {
         ],
       },
       {
-        id: 7,
+        id: 8,
         label: "Tools & Accessories",
         path: "/",
         subMenu: [
@@ -423,17 +423,17 @@ export const siteSettings = {
             path: '/',
           },
           {
-            id: 1,
+            id: 2,
             label: 'Tools',
             path: '/',
           },
           {
-            id: 1,
+            id: 3,
             label: 'Soldering Irons',
             path: '/',
           },
           {
-            id: 1,
+            id: 4,
             label: 'Heat Shrink Tubes',
           },
         ],
