@@ -1,7 +1,8 @@
 import cn from 'classnames';
 import Image from 'next/image';
 import type { FC } from 'react';
-import { useUI } from '@contexts/ui.context';
+import { useRouter } from 'next/router';
+// import { useUI } from '@contexts/ui.context';
 // import usePrice from '@framework/product/use-price';
 import { ProductDetails } from '@framework/types';
 // import ProductIcon1 from '../../../public/assets/images/products/icons/product-icon1.svg'
@@ -57,7 +58,7 @@ const ProductCard: FC<ProductProps> = ({
   disableBorderRadius = false,
 }) => {
   if (!product) return null;
-  const { openModal, setModalView, setModalData } = useUI();
+  // const { openModal, setModalView, setModalData } = useUI();
   const placeholderImage = `/assets/placeholder/products/product-${variant}.svg`;
   // const { price, basePrice, discount } = usePrice({
   //   amount: product.prices.price ? product.prices.originalPrice : product.prices.price,
@@ -71,10 +72,13 @@ const ProductCard: FC<ProductProps> = ({
   const discount = product.prices.price - product.prices.originalPrice;
   const price = `₹${product.prices.price}/-`;
   const basePrice = `₹${product.prices.originalPrice}/-`;
+  const history = useRouter();
   function handlePopupView() {
-    setModalData({ data: product });
-    setModalView('PRODUCT_VIEW');
-    return openModal();
+    if (!product) return console.log('Product not found');
+    history.push(`/products/${product?.slug}`);
+    // setModalData({ data: product });
+    // setModalView('PRODUCT_VIEW');
+    // return openModal();
   }
 
   return (

@@ -3,7 +3,7 @@ export const API_ENDPOINTS = {
   REGISTER: '/register',
 
   HOMEPAGE_BANNER: "/homepage/banners",
-  NEW_ARRIVAL_PRODUCTS: "/homepage/new-arrivals",
+  NEW_ARRIVAL_PRODUCTS: "https://throttle-space-backend-service-app.onrender.com/api/homepage/new-arrivals",
   RECENTLY_VIEWED: "/homepage/recently-viewed-products",
   FLASH_SALE: "/homepage/flash-sale",
   TOP_CATEGORIES: "/homepage/top-selling-categories",

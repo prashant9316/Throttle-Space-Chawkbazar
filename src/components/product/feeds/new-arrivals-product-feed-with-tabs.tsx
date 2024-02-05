@@ -47,14 +47,14 @@ const NewArrivalsProductFeedWithTabs: React.FC<any> = () => {
           >
             <p>{t('Batteries')}</p>
           </Tab>
-          <Tab
+          {/* <Tab
             as="li"
             className={({ selected }) =>
               selected ? 'tab-li-selected' : 'tab-li'
             }
           >
             <p>{t('Radios')}</p>
-          </Tab>
+          </Tab> */}
         </Tab.List>
 
         <Tab.Panels>
@@ -91,7 +91,7 @@ const NewArrivalsProductFeedWithTabs: React.FC<any> = () => {
               imgHeight={435}
             />
           </Tab.Panel>
-          <Tab.Panel>
+          {/* <Tab.Panel>
             <ProductsBlock
               products={data?.productRef}
               loading={isLoading}
@@ -101,7 +101,7 @@ const NewArrivalsProductFeedWithTabs: React.FC<any> = () => {
               imgWidth={435}
               imgHeight={435}
             />
-          </Tab.Panel>
+          </Tab.Panel> */}
         </Tab.Panels>
       </Tab.Group>
     </div>
