@@ -11,11 +11,11 @@ import { fetchBrands } from '@framework/brand/get-all-brands';
 // import ProductsFeatured from '@containers/products-featured';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import CategoryBlockIcon from '@containers/category-block-icon';
-import { ROUTES } from '@utils/routes';
-import { homeSevenBanner as banner } from '@framework/static/banner';
+// import { ROUTES } from '@utils/routes';
+// import { homeSevenBanner as banner } from '@framework/static/banner';
 // import { collectionContemporaryData as collection } from '@framework/static/collection';
 import NewArrivalsProductFeedWithTabs from '@components/product/feeds/new-arrivals-product-feed-with-tabs';
-import BannerCard from '@components/common/banner-card';
+// import BannerCard from '@components/common/banner-card';
 // import CollectionBlock from '@containers/collection-block';
 // import TestimonialCarousel from '@containers/testimonial-carousel';
 // All data file
@@ -26,10 +26,10 @@ import { homeContemporaryHeroSlider as banners } from '@framework/static/banner'
 import Subscription from '@components/common/subscription';
 import Instagram from '@components/common/instagram';
 // import RecentProductFeed from '@components/product/feeds/recent-product-feed';
-import {
-  contemporaryBanner1,
-  // contemporaryBanner2,
-} from '@framework/static/banner';
+// import {
+//   contemporaryBanner1,
+//   // contemporaryBanner2,
+// } from '@framework/static/banner';
 // import BrandTimerBlock from '@containers/brand-timer-block';
 // import dynamic from 'next/dynamic';
 // const DownloadApps = dynamic(() => import('@components/common/download-apps'));
