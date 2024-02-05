@@ -10,6 +10,16 @@ const NewArrivalsProductFeedWithTabs: React.FC<any> = () => {
   const { data, isLoading, error } = useProductsQuery({
     limit: 5,
   });
+  console.log(data)
+  const groupedData = data?.productRef.reduce((grouped: any, item) => {
+    const key = item.category.name.en;
+    if (!grouped[key]) {
+      grouped[key] = [];
+    }
+    grouped[key].push(item)
+    return grouped;
+  }, {});
+  console.log(groupedData)
   // console.log("New Arrival Products:")
   // console.log(data)
   return (
@@ -31,30 +41,19 @@ const NewArrivalsProductFeedWithTabs: React.FC<any> = () => {
           >
             <p>{t('All Products')}</p>
           </Tab>
-          <Tab
-            as="li"
-            className={({ selected }) =>
-              selected ? 'tab-li-selected' : 'tab-li'
-            }
-          >
-            <p>{t('Frames')}</p>
-          </Tab>
-          <Tab
-            as="li"
-            className={({ selected }) =>
-              selected ? 'tab-li-selected' : 'tab-li'
-            }
-          >
-            <p>{t('Batteries')}</p>
-          </Tab>
-          {/* <Tab
-            as="li"
-            className={({ selected }) =>
-              selected ? 'tab-li-selected' : 'tab-li'
-            }
-          >
-            <p>{t('Radios')}</p>
-          </Tab> */}
+          {groupedData && Object.keys(groupedData).map((item, index) => (
+            <Tab
+              as="li"
+              key={index}
+              className={({ selected }) =>
+                selected
+                  ? 'tab-li-selected'
+                  : 'tab-li focus-visible:outline-0 focus-visible:outline-transparent'
+              }
+            >
+              <p>{item}</p>
+            </Tab>
+          ))}
         </Tab.List>
 
         <Tab.Panels>
@@ -69,39 +68,19 @@ const NewArrivalsProductFeedWithTabs: React.FC<any> = () => {
               imgHeight={435}
             />
           </Tab.Panel>
-          <Tab.Panel>
-            <ProductsBlock
-              products={data?.productRef}
-              loading={isLoading}
-              error={error?.message}
-              uniqueKey="new-arrivals"
-              variant="gridModernWide"
-              imgWidth={435}
-              imgHeight={435}
-            />
-          </Tab.Panel>
-          <Tab.Panel>
-            <ProductsBlock
-              products={data?.productRef}
-              loading={isLoading}
-              error={error?.message}
-              uniqueKey="new-arrivals"
-              variant="gridModernWide"
-              imgWidth={435}
-              imgHeight={435}
-            />
-          </Tab.Panel>
-          {/* <Tab.Panel>
-            <ProductsBlock
-              products={data?.productRef}
-              loading={isLoading}
-              error={error?.message}
-              uniqueKey="new-arrivals"
-              variant="gridModernWide"
-              imgWidth={435}
-              imgHeight={435}
-            />
-          </Tab.Panel> */}
+          {groupedData && Object.keys(groupedData).map((item, index) => (
+            <Tab.Panel key={index}>
+              <ProductsBlock
+                products={groupedData[item]}
+                loading={isLoading}
+                error={error?.message}
+                uniqueKey="new-arrivals"
+                variant="gridModernWide"
+                imgWidth={435}
+                imgHeight={435}
+              />
+            </Tab.Panel>
+          ))}
         </Tab.Panels>
       </Tab.Group>
     </div>
