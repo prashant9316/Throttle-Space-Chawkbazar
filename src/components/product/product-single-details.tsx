@@ -94,7 +94,7 @@ const ProductSingleDetails: React.FC = () => {
     });
     console.log(item, 'item');
   }
-
+  console.log("variations: ", variations)
   function handleAttribute(attribute: any) {
     setAttributes((prev) => ({
       ...prev,
@@ -150,7 +150,7 @@ const ProductSingleDetails: React.FC = () => {
       )}
 
       <div className="col-span-4 pt-8 lg:pt-0">
-        <div className="pb-7 mb-7 border-b border-gray-300">
+        <div className="pb-7 mb-4 border-b border-gray-300">
           <h2 className="text-heading text-lg md:text-xl lg:text-2xl 2xl:text-3xl font-bold hover:text-black mb-3.5">
             {data?.title.en}
           </h2>
@@ -168,20 +168,21 @@ const ProductSingleDetails: React.FC = () => {
             )}
           </div>
         </div>
-
-        <div className="pb-3 border-b border-gray-300 grid grid-cols-5 ">
-          {data?.variants && Object.keys(variations).map((variation) => {
-            return (
-              <ProductAttributes
-                key={variation}
-                title={variation}
-                attributes={variations[variation]}
-                active={attributes[variation]}
-                onClick={handleAttribute}
-              />
-            );
-          })}
-        </div>
+        {variations == null && (
+          <div className="mb-4 border-b border-gray-300 grid grid-cols-5 ">
+            {data?.variants && Object.keys(variations).map((variation) => {
+              return (
+                <ProductAttributes
+                  key={variation}
+                  title={variation}
+                  attributes={variations[variation]}
+                  active={attributes[variation]}
+                  onClick={handleAttribute}
+                />
+              );
+            })}
+          </div>
+        )}
         <div className="flex items-center gap-x-4 ltr:md:pr-32 rtl:md:pl-32 ltr:lg:pr-12 rtl:lg:pl-12 ltr:2xl:pr-32 rtl:2xl:pl-32 ltr:3xl:pr-48 rtl:3xl:pl-48  border-b border-gray-300 pb-4">
           <Counter
             quantity={quantity}

@@ -63,12 +63,12 @@ export default function Home() {
           variant="modern"
           sectionHeading="text-featured-products"
         /> */}
-        <BannerCard
+        {/* <BannerCard
           key={`banner--key${banner.id}`}
           banner={contemporaryBanner1}
           href={`${ROUTES.COLLECTIONS}/${banner.slug}`}
           className="mb-12 md:mb-14 xl:mb-16 pb-0.5 md:pb-0 lg:pb-1 xl:pb-0 md:-mt-2.5"
-        />
+        /> */}
         {/* <TrendingProductFeedWithTabs /> */}
         {/* <BannerCard
           key={`banner--key1${banner.id}`}
