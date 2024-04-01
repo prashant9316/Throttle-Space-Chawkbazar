@@ -4,8 +4,9 @@ import { API_ENDPOINTS } from '@framework/utils/api-endpoints';
 import { useQuery } from '@tanstack/react-query';
 
 export const fetchFeaturedProducts = async () => {
-  const { data } = await https.get(API_ENDPOINTS.FLASH_SALE);
-  return data.data as FetchProducts;
+  const { data } = await https.get(API_ENDPOINTS.FEATURED_PRODUCTS);
+  console.log(data)
+  return data.data[0] as FetchProducts;
 };
 
 // const fetchAncientFeaturedProducts = async () => {
@@ -22,7 +23,7 @@ export const useFeaturedProductsQuery = (options: QueryOptionsType) => {
   // }
 
   return useQuery<FetchProducts, Error>({
-    queryKey: [API_ENDPOINTS.FLASH_SALE, options],
+    queryKey: [API_ENDPOINTS.FEATURED_PRODUCTS, options],
     queryFn: fetchFeaturedProducts
   });
 };

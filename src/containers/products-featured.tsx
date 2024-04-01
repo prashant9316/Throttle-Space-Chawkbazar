@@ -22,15 +22,15 @@ const ProductsFeatured: React.FC<ProductsProps> = ({
   categorySlug,
   className = 'mb-12 md:mb-14 xl:mb-16',
   variant = 'left',
-  limit = 5,
+  // limit = 5,
   hideBanner = false,
   demoVariant,
   disableBorderRadius = false,
 }) => {
-  const { data, error } = useFeaturedProductsQuery({
-    limit: limit,
-    demoVariant,
-  });
+  const { data, error } = useFeaturedProductsQuery({});
+  // console.log("Featured Products")
+  // console.log(data)
+
 
   return (
     <div className={className}>
@@ -62,7 +62,7 @@ const ProductsFeatured: React.FC<ProductsProps> = ({
               />
             </div>
           )}
-          {data?.productRef.slice(0, limit).map((product: ProductDetails, idx: number) => (
+          {data?.productRef.map((product: ProductDetails, idx: number) => (
             <ProductOverlayCard
               disableBorderRadius={disableBorderRadius}
               key={`product--key${product._id}`}

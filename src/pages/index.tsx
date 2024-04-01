@@ -8,9 +8,10 @@ import { fetchFlashSaleProducts } from '@framework/product/get-all-flash-sale-pr
 import { fetchCategories } from '@framework/category/get-all-categories';
 import { fetchNewArrivalProducts } from '@framework/product/get-all-new-arrival-products';
 import { fetchBrands } from '@framework/brand/get-all-brands';
-// import ProductsFeatured from '@containers/products-featured';
+import CategoryBlock from '@containers/category-block';
+import ProductsFeatured from '@containers/products-featured';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import CategoryBlockIcon from '@containers/category-block-icon';
+// import CategoryBlockIcon from '@containers/category-block-icon';
 // import { ROUTES } from '@utils/routes';
 // import { homeSevenBanner as banner } from '@framework/static/banner';
 // import { collectionContemporaryData as collection } from '@framework/static/collection';
@@ -44,11 +45,21 @@ export default function Home() {
         prevNextButtons="none"
         className="!mb-12 !md:mb-14 !xl:mb-[60px]"
       />
+      <Container>
+        <ProductsFeatured
+          limit={5}
+          sectionHeading="text-featured-products"
+        />
+        <CategoryBlock
+          sectionHeading="text-shop-by-category"
+          type="rounded"
+        />
+      </Container>
       <Container className="border-b-2 border[#E6E6E6]">
-        <CategoryBlockIcon
+        {/* <CategoryBlockIcon
           sectionHeading="text-browse-categories"
           variant="list"
-        />
+        /> */}
         {/* <SaleBannerGrid
           data={bannerDataContemporary}
           className="mb-12 md:mb-14 xl:mb-16"
@@ -58,11 +69,7 @@ export default function Home() {
           sectionHeading="text-top-brands-deal"
           className="mb-12 md:mb-14 xl:mb-16"
         /> */}
-        {/* <ProductsFeatured
-          limit={3}
-          variant="modern"
-          sectionHeading="text-featured-products"
-        /> */}
+
         {/* <BannerCard
           key={`banner--key${banner.id}`}
           banner={contemporaryBanner1}

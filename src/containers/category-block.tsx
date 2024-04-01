@@ -7,6 +7,14 @@ import { useCategoriesQuery } from '@framework/category/get-all-categories';
 import { ROUTES } from '@utils/routes';
 import Alert from '@components/ui/alert';
 import { SwiperSlide } from 'swiper/react';
+import { Category } from '@framework/types';
+
+// interface title {
+//   en: string;
+//   ar?: string;
+//   th?: string;
+//   hi?: string;
+// }
 
 interface CategoriesProps {
   sectionHeading: string;
@@ -26,7 +34,7 @@ const CategoryBlock: React.FC<CategoriesProps> = ({
   roundedItemCount,
   roundedSpaceBetween,
   imgSize,
-  demoVariant,
+  // demoVariant,
   disableBorderRadius = false,
 }) => {
   const breakpoints = {
@@ -83,10 +91,9 @@ const CategoryBlock: React.FC<CategoriesProps> = ({
     },
   };
 
-  const { data, isLoading, error } = useCategoriesQuery({
-    limit: 10,
-    demoVariant: demoVariant || undefined,
-  });
+  const { data, isLoading, error } = useCategoriesQuery({});
+  console.log("Categories data: ")
+  console.log(data)
 
   return (
     <div className={className}>
@@ -116,7 +123,7 @@ const CategoryBlock: React.FC<CategoriesProps> = ({
                 </SwiperSlide>
               );
             })
-            : data?.categories?.data?.map((category) => (
+            : data?.categories?.data?.map((category: Category) => (
               <SwiperSlide key={`category--key-${category._id}`}>
                 <Card
                   imgSize={imgSize}

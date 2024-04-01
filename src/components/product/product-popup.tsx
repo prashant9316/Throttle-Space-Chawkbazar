@@ -31,13 +31,13 @@ export default function ProductPopup() {
     currencyCode: 'USD',
   });
   const variations = getVariations(data.variations);
-  const { slug, image, name, description } = data;
+  const { slug, image, title, description } = data;
 
   const isSelected = !isEmpty(variations)
     ? !isEmpty(attributes) &&
-      Object.keys(variations).every((variation) =>
-        attributes.hasOwnProperty(variation)
-      )
+    Object.keys(variations).every((variation) =>
+      attributes.hasOwnProperty(variation)
+    )
     : true;
 
   function addToCart() {
@@ -80,10 +80,10 @@ export default function ProductPopup() {
         <div className="flex-shrink-0 flex items-center justify-center w-full lg:w-430px max-h-430px lg:max-h-full overflow-hidden bg-gray-300">
           <img
             src={
-              image?.original ??
+              image[0] ??
               '/assets/placeholder/products/product-thumbnail.svg'
             }
-            alt={name}
+            alt={title?.en}
             className="lg:object-cover lg:w-full lg:h-full"
           />
         </div>
@@ -96,11 +96,11 @@ export default function ProductPopup() {
               role="button"
             >
               <h2 className="text-heading text-lg md:text-xl lg:text-2xl font-semibold hover:text-black">
-                {name}
+                {title?.en}
               </h2>
             </div>
             <p className="text-sm leading-6 md:text-body md:leading-7">
-              {description}
+              {description?.en}
             </p>
 
             <div className="flex items-center mt-3">
@@ -140,9 +140,8 @@ export default function ProductPopup() {
               <Button
                 onClick={addToCart}
                 variant="flat"
-                className={`w-full h-11 md:h-12 px-1.5 ${
-                  !isSelected && 'bg-gray-400 hover:bg-gray-400'
-                }`}
+                className={`w-full h-11 md:h-12 px-1.5 ${!isSelected && 'bg-gray-400 hover:bg-gray-400'
+                  }`}
                 disabled={!isSelected}
                 loading={addToCartLoader}
               >

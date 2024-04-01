@@ -12,7 +12,7 @@ import LanguageSwitcher from '@components/ui/language-switcher';
 // import WishButton from '@components/ui/wish-button';
 import { UserLineIcon } from '@components/icons/UserLineIcon';
 import Link from '@components/ui/link';
-import CategoryMenu from '@components/ui/category-menu';
+// import CategoryMenu from '@components/ui/category-menu';
 const AuthMenu = dynamic(() => import('@components/layout/header/auth-menu'), {
   ssr: false,
 });
@@ -22,8 +22,8 @@ const CartButton = dynamic(() => import('@components/cart/cart-button'), {
 
 type DivElementRef = React.MutableRefObject<HTMLDivElement>;
 const { site_header } = siteSettings;
-export default function Header() {
-  const { openSidebar, setDrawerView, openModal, setModalView, isAuthorized } =
+export default function HeaderThree() {
+  const { openSidebar, setDrawerView, openModal, setModalView, isAuthorized, openSearch } =
     useUI();
   const { t } = useTranslation();
   const siteHeaderRef = useRef() as DivElementRef;
@@ -75,28 +75,14 @@ export default function Header() {
             </div>
           </div>
 
-          <div className="relative hidden w-2/6 ltr:mr-auto rtl:ml-auto lg:block">
-            <form
-              className="relative w-full overflow-hidden rounded-md bg-borderBottom"
-              noValidate
-              role="search"
+          <div className="flex-shrink-0 ltr:ml-auto rtl:mr-auto ltr:lg:mr-5 rtl:lg:ml-5 ltr:xl:mr-8 rtl:xl:ml-8 ltr:2xl:mr-10 rtl:2xl:ml-10">
+            <button
+              className="relative flex items-center justify-center flex-shrink-0 h-auto transform focus:outline-none"
+              onClick={openSearch}
+              aria-label="search-button"
             >
-              <label htmlFor="search" className="flex items-center">
-                <span className="absolute top-0 left-0 flex items-center justify-center flex-shrink-0 w-12 h-full cursor-pointer md:w-14 focus:outline-none">
-                  <SearchIcon
-                    color="text-heading"
-                    className="w-[18px] h-[18px]"
-                  />
-                </span>
-                <input
-                  id="search"
-                  className="w-full text-sm placeholder-gray-400 bg-transparent rounded-md outline-none focus:border-2 focus:border-gray-600 ltr:pr-4 rtl:pl-4 ltr:pl-14 rtl:pr-14 h-14 text-heading lg:text-base"
-                  placeholder={'Search Anything...'}
-                  aria-label="Search"
-                  autoComplete="off"
-                />
-              </label>
-            </form>
+              <SearchIcon />
+            </button>
           </div>
           <div className="flex flex-shrink-0 transition-all duration-200 ease-in-out transform ltr:ml-auto rtl:mr-auto ltr:mr-3 rtl:ml-3 ltr:lg:mr-5 rtl:lg:ml-5 ltr:xl:mr-8 rtl:xl:ml-8 ltr:2xl:mr-10 rtl:2xl:ml-10 languageSwitcher lg:hidden">
             <LanguageSwitcher />
@@ -121,10 +107,10 @@ export default function Header() {
 
         <div className="items-center hidden lg:flex lg:h-16 headerBottom mx-auto max-w-[1920px]">
           <div className="flex items-center">
-            <CategoryMenu
+            {/* <CategoryMenu
               className="hidden lg:block"
               categoryMenu={site_header?.categoryMenu}
-            />
+            /> */}
             <HeaderMenu
               data={site_header.menu}
               className="hidden lg:flex ltr:pl-3.5 rtl:pr-3.5 ltr:xl:pl-5 rtl:xl:pr-5 "

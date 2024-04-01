@@ -7,6 +7,7 @@ import CookieBar from '@components/common/cookie-bar';
 import { useAcceptCookies } from '@utils/use-accept-cookies';
 import Button from '@components/ui/button';
 import { useTranslation } from 'next-i18next';
+// import Header from './header/header-three';
 
 export default function Layout({ children }: React.PropsWithChildren<{}>) {
 	const { acceptedCookies, onAcceptCookies } = useAcceptCookies();
@@ -45,6 +46,7 @@ export default function Layout({ children }: React.PropsWithChildren<{}>) {
 				}}
 			/>
 			<HeaderTwo />
+			{/* <Header /> */}
 			<main
 				className="relative flex-grow"
 				style={{

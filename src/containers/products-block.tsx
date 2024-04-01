@@ -72,9 +72,9 @@ const ProductsBlock: React.FC<ProductsProps> = ({
             } xl:gap-y-${demoVariant === "ancient" ? 2 : 5} 2xl:gap-y-${demoVariant === "ancient" ? 3 : 8
             } bg-white`,
             {
-              "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-5":
+              "grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6":
                 variant === "grid",
-              "grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4":
+              "grid-cols-2 sm:grid-cols-4 md:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6":
                 variant === "gridModernWide",
               "grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5":
                 variant === "gridModern",

@@ -191,28 +191,6 @@ export const siteSettings = {
       },
       {
         id: 7,
-        path: '/',
-        label: 'RTF & PNP',
-        subMenu: [
-          {
-            id: 1,
-            path: '/',
-            label: 'Ready to Fly Builds',
-          },
-          {
-            id: 2,
-            path: '/',
-            label: 'Customize your build',
-          },
-          {
-            id: 3,
-            path: '/',
-            label: 'ThrottleSpace Exclusives',
-          }
-        ],
-      },
-      {
-        id: 7,
         label: "Tools & Accessories",
         path: "/",
         subMenu: [
@@ -237,6 +215,11 @@ export const siteSettings = {
             path: '/',
           },
         ]
+      },
+      {
+        id: 8,
+        path: '/3d-printing-service',
+        label: '3d Printing',
       }
     ],
     mobileMenu: [
@@ -809,11 +792,11 @@ export const siteSettings = {
         label: 'menu-deals-today',
         icon: <ThunderIcon className="w-3 h-auto" />,
       },
-      {
-        id: 2,
-        path: '/',
-        label: 'menu-offers',
-      },
+      // {
+      //   id: 2,
+      //   path: '/',
+      //   label: 'menu-offers',
+      // },
       {
         id: 3,
         path: '/faq',
