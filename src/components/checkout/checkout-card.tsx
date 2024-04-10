@@ -3,13 +3,25 @@ import { useCart } from '@contexts/cart/cart.context';
 import { CheckoutItem } from '@components/checkout/checkout-card-item';
 import { CheckoutCardFooterItem } from './checkout-card-footer-item';
 import { useTranslation } from 'next-i18next';
+import { useEffect } from 'react';
 
-const CheckoutCard: React.FC = () => {
+interface CheckoutCardProps {
+  paymentMethod: string;
+}
+
+const CheckoutCard: React.FC<CheckoutCardProps> = ({ paymentMethod }) => {
   const { items, total, isEmpty } = useCart();
-  const { price: subtotal } = usePrice({
+  let { price: subtotal } = usePrice({
     amount: total,
     currencyCode: 'INR',
   });
+  useEffect(() => {
+    if (paymentMethod === 'cod') {
+      subtotal = subtotal + 50;
+    } else {
+      subtotal = subtotal;
+    }
+  }, [paymentMethod])
   const { t } = useTranslation('common');
   const checkoutFooter = [
     {

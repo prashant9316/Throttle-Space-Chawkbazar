@@ -4,9 +4,12 @@ import TextArea from '@components/ui/text-area';
 import { useCheckoutMutation } from '@framework/checkout/use-checkout';
 import { CheckBox } from '@components/ui/checkbox';
 import Button from '@components/ui/button';
-import Router from 'next/router';
-import { ROUTES } from '@utils/routes';
+
 import { useTranslation } from 'next-i18next';
+import { useCart } from '@contexts/cart/cart.context';
+import React from 'react';
+import Cookies from "js-cookie";
+import { toast } from 'react-toastify';
 
 interface CheckoutInputType {
   firstName: string;
@@ -20,18 +23,142 @@ interface CheckoutInputType {
   note: string;
 }
 
-const CheckoutForm: React.FC = () => {
+interface CheckoutFormProps {
+  paymentMethod: string;
+  setPaymentMethod: (method: string) => void;
+  setOpenModal: (open: boolean) => void;
+  setOrderDetails: (order: any) => void;
+}
+
+const CheckoutForm: React.FC<CheckoutFormProps> = ({ paymentMethod, setPaymentMethod, setOpenModal, setOrderDetails }) => {
+
+  const { items, removeItemFromCart } = useCart();
+  const [isLoggedIn, setIsLoggedIn] = React.useState<boolean>(false);
+  const [isGuest, setIsGuest] = React.useState<boolean>(false);
+
   const { t } = useTranslation();
-  const { mutate: updateUser, isPending } = useCheckoutMutation();
+  const { isPending } = useCheckoutMutation();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<CheckoutInputType>();
-  function onSubmit(input: CheckoutInputType) {
-    updateUser(input);
-    Router.push(ROUTES.ORDER);
+
+  const clearCart = () => {
+    items.map((item) => removeItemFromCart(item.id));
   }
+
+  const createOrder = async (input: CheckoutInputType) => {
+    const orderDetails = {
+      cart: items,
+      billing: input,
+      guestCheckout: isGuest,
+      paymentMethod: paymentMethod
+    }
+
+    let host = '';
+    if (process.env.NODE_ENV === 'development') {
+      host += 'http://localhost:5055';
+    } else {
+      host += 'https://throttle-space-backend-service-app.onrender.com/';
+    }
+
+    let api = '';
+    if (isGuest === true) {
+      api += '/api/order/guest-add';
+    } else {
+      api += '/api/order/add';
+    }
+    console.log(`${host}${api}`)
+    const response = await fetch(`${host}${api}`, {
+      method: 'POST',
+      body: JSON.stringify(orderDetails),
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${Cookies.get('auth_token')}`
+      }
+    });
+    const data = await response.json();
+    if (data.error) {
+      toast(data.error, {
+        type: "error",
+        autoClose: 2000,
+      })
+      return;
+    } else {
+      toast("Order Created Successfull!", {
+        type: "success",
+        autoClose: 2000,
+      });
+    }
+    setOrderDetails(data.order);
+    return data.order;
+  }
+
+  async function onSubmit(input: CheckoutInputType) {
+    try {
+      if (items.length === 0) {
+        toast("Cart is Empty!", {
+          type: "info",
+          autoClose: 2000,
+        })
+        return;
+      }
+      if (Cookies.get('auth_token') === undefined && isGuest === false) {
+        toast("Please Login or Select Guest Checkout", {
+          type: "info",
+          autoClose: 2000,
+        })
+        return;
+      }
+      // alert(paymentMethod)
+      if (paymentMethod === '') {
+        toast("Please Select Payment Method", {
+          type: "info",
+          autoClose: 2000,
+        })
+        return;
+      } else if (paymentMethod === 'cod') {
+        toast("COD is not available for this product!", {
+          type: "warning",
+          autoClose: 2000,
+        })
+        return;
+      } else if (paymentMethod === 'online') {
+        // if(cart == [])
+        toast("Online Payment Selected!", {
+          type: "success",
+          autoClose: 2000,
+        });
+        const orderDetails = await createOrder(input);
+        console.log(orderDetails);
+        setOpenModal(true);
+        clearCart();
+        return;
+      }
+    } catch (error) {
+
+    }
+  }
+
+  const handleGuestCheckout = (event: any) => {
+    // event.preventDefault();
+    setIsGuest(event.target.checked);
+  }
+
+  // function onSubmit(input: CheckoutInputType) {
+  //   updateUser(input);
+  //   Router.push(ROUTES.ORDER);
+  // }
+
+  React.useEffect(() => {
+    // setOpenModal(true);
+    if (Cookies.get('auth_token') !== undefined) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, [isLoggedIn, Cookies.get('auth_token')])
 
   return (
     <>
@@ -44,6 +171,40 @@ const CheckoutForm: React.FC = () => {
         noValidate
       >
         <div className="flex flex-col space-y-4 lg:space-y-5">
+          {!isLoggedIn && (
+            <div>
+              <div className="relative flex items-center">
+                <CheckBox label="Guest Checkout" onChange={handleGuestCheckout} />
+              </div>
+            </div>
+          )}
+
+          <div className="mt-4">
+            <span className="text-lg font-medium text-heading">Payment Method</span>
+            <div className="mt-2 flex flex-col">
+              <label className="inline-flex items-center">
+                <input
+                  type="radio"
+                  className="form-radio h-5 w-5 text-primary"
+                  name="paymentMethod"
+                  value="cod"
+                  onChange={e => setPaymentMethod(e.target.value)}
+                />
+                <span className="ml-2 text-sm text-body">Cash on Delivery [Cod Charges Rs 50/- extra]</span>
+              </label>
+              <label className="inline-flex items-center mt-3">
+                <input
+                  type="radio"
+                  className="form-radio h-5 w-5 text-primary"
+                  name="paymentMethod"
+                  value="online"
+                  onChange={e => setPaymentMethod(e.target.value)}
+                />
+                <span className="ml-2 text-sm text-body">Online Payment</span>
+              </label>
+            </div>
+          </div>
+
           <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0">
             <Input
               labelKey="forms:label-first-name"

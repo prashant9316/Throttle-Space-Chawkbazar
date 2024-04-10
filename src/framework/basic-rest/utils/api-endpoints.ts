@@ -8,6 +8,7 @@ export const API_ENDPOINTS = {
   FLASH_SALE: "/homepage/flash-sale",
   TOP_CATEGORIES: "/homepage/top-selling-categories",
   OFFER_BANNER: "/homepage/offer-banner",
+  PRODUCT_CATEGORY: "http://localhost:5055/api/products/category/",
   FEATURED_PRODUCTS: "https://throttle-space-backend-service-app.onrender.com/api/homepage/featured-products",
   PRODUCT: "https://throttle-space-backend-service-app.onrender.com/api/products/product/",
   CATEGORIES: 'https://throttle-space-backend-service-app.onrender.com/api/category/show',
