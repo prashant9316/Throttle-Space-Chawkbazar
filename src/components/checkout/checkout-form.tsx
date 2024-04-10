@@ -60,7 +60,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ paymentMethod, setPaymentMe
     if (process.env.NODE_ENV === 'development') {
       host += 'http://localhost:5055';
     } else {
-      host += 'https://throttle-space-backend-service-app.onrender.com/';
+      host += 'https://throttle-space-backend-service-app.onrender.com';
     }
 
     let api = '';

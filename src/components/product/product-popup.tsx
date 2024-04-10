@@ -11,6 +11,7 @@ import { generateCartItem } from '@utils/generate-cart-item';
 import usePrice from '@framework/product/use-price';
 import { getVariations } from '@framework/utils/get-variations';
 import { useTranslation } from 'next-i18next';
+import { Item } from '@contexts/cart/cart.utils';
 
 export default function ProductPopup() {
   const { t } = useTranslation('common');
@@ -31,7 +32,7 @@ export default function ProductPopup() {
     currencyCode: 'USD',
   });
   const variations = getVariations(data.variations);
-  const { slug, image, title, description } = data;
+  const { slug, image, title, description, _id, prices } = data;
 
   const isSelected = !isEmpty(variations)
     ? !isEmpty(attributes) &&
@@ -41,6 +42,7 @@ export default function ProductPopup() {
     : true;
 
   function addToCart() {
+    console.log(data, 'data');
     if (!isSelected) return;
     // to show btn feedback while product carting
     setAddToCartLoader(true);
@@ -48,7 +50,17 @@ export default function ProductPopup() {
       setAddToCartLoader(false);
       setViewCartBtn(true);
     }, 600);
-    const item = generateCartItem(data!, attributes);
+    const precart: Item = {
+      id: _id,
+      name: title,
+      slug: slug,
+      image: image,
+      price: prices.originalPrice,
+      desc: description,
+      sale_price: prices.price
+    }
+    console.log("precart", precart)
+    const item = generateCartItem(precart, attributes);
     addItemToCart(item, quantity);
     console.log(item, 'item');
   }
