@@ -78,19 +78,24 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ paymentMethod, setPaymentMe
         'Authorization': `Bearer ${Cookies.get('auth_token')}`
       }
     });
-    const data = await response.json();
-    if (data.error) {
-      toast(data.error, {
-        type: "error",
-        autoClose: 2000,
-      })
-      return;
-    } else {
+    if (response.ok) {
       toast("Order Created Successfull!", {
         type: "success",
         autoClose: 2000,
       });
+    } else {
+      toast("Failed to place Order", {
+        type: "error",
+        autoClose: 2000,
+      })
     }
+    const data = await response.json();
+    // if (data.error) {
+
+    //   return;
+    // } else {
+
+    // }
     setOrderDetails(data.order);
     return data.order;
   }

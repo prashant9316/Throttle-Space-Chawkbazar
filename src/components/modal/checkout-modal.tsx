@@ -32,7 +32,7 @@ export default function CheckoutModal({ open, onClose, orderDetails }: CheckoutM
         if (process.env.NODE_ENV === 'development') {
             host += 'http://localhost:5055';
         } else {
-            host += 'https://throttle-space-backend-service-app.onrender.com/';
+            host += 'https://throttle-space-backend-service-app.onrender.com';
         }
         const api = `/api/order/add-payment-details/${orderDetails._id}`;
 
