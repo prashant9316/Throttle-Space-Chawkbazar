@@ -39,9 +39,9 @@ const HeaderTwo: React.FC = () => {
     <header
       id="siteHeader"
       ref={siteHeaderRef}
-      className="relative z-20 w-full h-16 sm:h-20 lg:h-24"
+      className="relative z-20 bg-black text-white w-full h-16 sm:h-20 lg:h-24"
     >
-      <div className="fixed z-20 w-full h-16 px-4 text-gray-700 transition duration-200 ease-in-out bg-white innerSticky body-font sm:h-20 lg:h-24 ltr:lg:pr-6 rtl:lg:pl-6">
+      <div className="fixed z-20 w-full h-16 px-4 text-gray-200 transition duration-200 ease-in-out bg-black innerSticky body-font sm:h-20 lg:h-24 ltr:lg:pr-6 rtl:lg:pl-6">
         <div className="flex items-center mx-auto max-w-[1920px] h-full w-full">
           <button
             aria-label="Menu"
@@ -71,7 +71,7 @@ const HeaderTwo: React.FC = () => {
               <AuthMenu
                 isAuthorized={isAuthorized}
                 href={ROUTES.ACCOUNT}
-                className="text-sm font-semibold xl:text-base text-heading"
+                className="text-sm font-semibold xl:text-base text-white"
                 btnProps={{
                   className:
                     'text-sm xl:text-base text-heading font-semibold focus:outline-none',

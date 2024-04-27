@@ -31,10 +31,10 @@ const WidgetLink: FC<Props> = ({ className, data }) => {
     >
       {!data?.isCompanyIntroduction ? (
         <>
-          <h4 className="mb-5 text-sm font-semibold text-heading md:text-base xl:text-lg 2xl:mb-6 3xl:mb-7">
+          <h4 className="mb-5 text-sm font-semibold text-white md:text-base xl:text-lg 2xl:mb-6 3xl:mb-7">
             {t(`${widgetTitle}`)}
           </h4>
-          <ul className="text-xs lg:text-sm text-body flex flex-col space-y-3 lg:space-y-3.5">
+          <ul className="text-xs lg:text-sm text-gray-100 flex flex-col space-y-3 lg:space-y-3.5">
             {lists.map((list) => (
               <li
                 key={`widget-list--key${list.id}`}
@@ -46,7 +46,7 @@ const WidgetLink: FC<Props> = ({ className, data }) => {
                   </span>
                 )}
                 <Link href={list.path ? list.path : '#!'}>
-                  <a className="transition-colors duration-200 hover:text-black">
+                  <a className="transition-colors duration-200 hover:text-gray-400">
                     {t(`${list.title}`)}
                   </a>
                 </Link>
@@ -57,10 +57,10 @@ const WidgetLink: FC<Props> = ({ className, data }) => {
       ) : (
         <div className="ltr:mr-4 rtl:ml-4 flex flex-col space-y-7 lg:space-y-7.5">
           <Logo className="" />
-          <p className="text-sm font-normal text-[#1D1E1F] leading-6 max-w-[334px] ">
+          <p className="text-sm font-normal text-[#bcc1c6] leading-6 max-w-[334px] ">
             {description}
           </p>
-          <ul className="text-xs lg:text-sm text-body flex items-center gap-x-3 lg:gap-x-3.5">
+          <ul className="text-xs lg:text-sm text-gray-200 flex items-center gap-x-3 lg:gap-x-3.5">
             {lists.map((list) => (
               <li
                 key={`widget-list--key${list.id}`}

@@ -42,7 +42,7 @@ export const siteSettings = {
       {
         id: 1,
         path: '/',
-        label: 'Frames',
+        label: 'Ready To Fly Drones',
         subMenu: [
           {
             id: 1,
@@ -69,7 +69,7 @@ export const siteSettings = {
       {
         id: 2,
         path: '/category/electronics',
-        label: 'Electronics',
+        label: 'Drone Parts',
         subMenu: [
           {
             id: 1,
@@ -96,57 +96,57 @@ export const siteSettings = {
       {
         id: 3,
         path: '/category/radios',
-        label: 'Radios',
+        label: 'FPV Essentials',
       },
-      {
-        id: 4,
-        path: '/',
-        label: 'FPV Equipment',
-        subMenu: [
-          {
-            id: 1,
-            path: '/',
-            label: 'FPV Goggles',
-          },
-          {
-            id: 2,
-            path: '/',
-            label: 'GPV Cameras',
-          },
-          {
-            id: 3,
-            path: '/',
-            label: 'VTX',
-          },
-          {
-            id: 3,
-            path: '/',
-            label: 'VRX',
-          }
-        ],
-      },
-      {
-        id: 5,
-        path: '/',
-        label: 'Motors',
-        subMenu: [
-          {
-            id: 1,
-            path: '/',
-            label: 'Micro Motors',
-          },
-          {
-            id: 2,
-            path: '/',
-            label: 'Mini Motors',
-          },
-          {
-            id: 3,
-            path: '/',
-            label: 'Long Range',
-          }
-        ],
-      },
+      // {
+      //   id: 4,
+      //   path: '/',
+      //   label: 'FPV Equipment',
+      //   subMenu: [
+      //     {
+      //       id: 1,
+      //       path: '/',
+      //       label: 'FPV Goggles',
+      //     },
+      //     {
+      //       id: 2,
+      //       path: '/',
+      //       label: 'GPV Cameras',
+      //     },
+      //     {
+      //       id: 3,
+      //       path: '/',
+      //       label: 'VTX',
+      //     },
+      //     {
+      //       id: 3,
+      //       path: '/',
+      //       label: 'VRX',
+      //     }
+      //   ],
+      // },
+      // {
+      //   id: 5,
+      //   path: '/',
+      //   label: 'Motors',
+      //   subMenu: [
+      //     {
+      //       id: 1,
+      //       path: '/',
+      //       label: 'Micro Motors',
+      //     },
+      //     {
+      //       id: 2,
+      //       path: '/',
+      //       label: 'Mini Motors',
+      //     },
+      //     {
+      //       id: 3,
+      //       path: '/',
+      //       label: 'Long Range',
+      //     }
+      //   ],
+      // },
       {
         id: 6,
         path: '/',
@@ -189,33 +189,33 @@ export const siteSettings = {
           },
         ],
       },
-      {
-        id: 7,
-        label: "Tools & Accessories",
-        path: "/",
-        subMenu: [
-          {
-            id: 1,
-            label: 'Multimeters',
-            path: '/',
-          },
-          {
-            id: 1,
-            label: 'Tools',
-            path: '/',
-          },
-          {
-            id: 1,
-            label: 'Soldering Irons',
-            path: '/',
-          },
-          {
-            id: 1,
-            label: 'Heat Shrink Tubes',
-            path: '/',
-          },
-        ]
-      },
+      // {
+      //   id: 7,
+      //   label: "Tools & Accessories",
+      //   path: "/",
+      //   subMenu: [
+      //     {
+      //       id: 1,
+      //       label: 'Multimeters',
+      //       path: '/',
+      //     },
+      //     {
+      //       id: 1,
+      //       label: 'Tools',
+      //       path: '/',
+      //     },
+      //     {
+      //       id: 1,
+      //       label: 'Soldering Irons',
+      //       path: '/',
+      //     },
+      //     {
+      //       id: 1,
+      //       label: 'Heat Shrink Tubes',
+      //       path: '/',
+      //     },
+      //   ]
+      // },
       {
         id: 8,
         path: '/3d-printing-service',

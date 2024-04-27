@@ -2,7 +2,8 @@ import SectionHeader from '@components/common/section-header';
 import Carousel from '@components/ui/carousel/carousel';
 import { SwiperSlide } from 'swiper/react';
 import { ProductDetails } from '@framework/types';
-import ProductCard from '@components/product/product-card';
+// import ProductCard from '@components/product/product-card';
+import ProductCard2 from '@components/product/product-card-2';
 
 interface ProductsBlockProps {
   sectionHeading: string;
@@ -89,7 +90,7 @@ const ProductsBlockCarousel: React.FC<ProductsBlockProps> = ({
       >
         {products?.map((product, id) => (
           <SwiperSlide key={`testimonial--key-${id}`} className="pt-2">
-            <ProductCard
+            <ProductCard2
               product={product}
               variant={type}
               imgWidth={imgWidth}

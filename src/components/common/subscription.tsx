@@ -41,17 +41,17 @@ const Subscription: React.FC<Props> = ({
   }
   return (
     <div
-      className={`${className} flex flex-col xl:flex-row justify-center xl:justify-between items-center rounded-lg bg-gray-200 py-10 md:py-14 lg:py-16`}
+      className={`${className} flex flex-col xl:flex-row justify-center xl:justify-between items-center rounded-lg bg-[#202020] py-10 md:py-16 lg:py-20`}
     >
       <div className="lg:-mt-2 xl:-mt-0.5 text-center ltr:xl:text-left rtl:xl:text-right mb-7 md:mb-8 lg:mb-9 xl:mb-0">
         <Text
           variant="mediumHeading"
           // className='mb-2 md:mb-2.5 lg:mb-3 xl:mb-3.5'
-          className="sm:mb-0 md:mb-2.5 lg:mb-3 xl:mb-3.5"
+          className="sm:mb-0 md:mb-2.5 lg:mb-3 xl:mb-3.5 text-white"
         >
           {t(`${title}`)}
         </Text>
-        <p className="text-body text-xs md:text-sm leading-6 md:leading-7">
+        <p className="text-white text-xs md:text-sm leading-6 md:leading-7">
           {t(`${description}`)}
         </p>
       </div>
@@ -81,6 +81,7 @@ const Subscription: React.FC<Props> = ({
           <Button
             disableBorderRadius={disableBorderRadius}
             className="mt-3 sm:mt-0 w-full sm:w-auto ltr:sm:ml-2 rtl:sm:mr-2 md:h-full flex-shrink-0"
+            style={{ border: '1px solid #fff' }}
           >
             <span className="lg:py-0.5">{t(`${buttonText}`)}</span>
           </Button>

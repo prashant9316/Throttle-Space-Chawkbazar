@@ -24,9 +24,9 @@ const HeroSlider: React.FC<Props> = ({
   return (
     <div
       className={cn(
-        'relative mb-5 md:mb-8',
+        'relative mb-5 md:mb-8 pt-[50px]',
         {
-          'mx-auto max-w-[1920px]': variant === 'fullWidth',
+          'mx-auto max-w-[1300px] h-[350px]': variant === 'fullWidth',
         },
         className
       )}
@@ -35,16 +35,13 @@ const HeroSlider: React.FC<Props> = ({
         autoplay={{
           delay: 5000,
         }}
-        className={`mx-0 ${
-          variant === 'fullWidth' ? 'carousel-full-width' : ''
-        }`}
+        className={`mx-0 ${variant === 'fullWidth' ? 'carousel-full-width' : ''
+          }`}
         paginationPosition="left"
-        prevButtonClasses={`ltr:left-6 rtl:right-6 ltr:md:left-8 rtl:md:right-8 ltr:xl:left-12 rtl:xl:right-12 ltr:2xl:left-16 rtl:2xl:right-16 ${
-          prevNextButtons === 'none' && 'hidden'
-        }`}
-        nextButtonClasses={`ltr:right-6 rtl:left-6 ltr:md:right-8 rtl:md:left-8 ltr:xl:right-12 rtl:xl:left-12 ltr:2xl:right-16 rtl:2xl:left-16 ${
-          prevNextButtons === 'none' && 'hidden'
-        }`}
+        prevButtonClasses={`ltr:left-6 rtl:right-6 ltr:md:left-8 rtl:md:right-8 ltr:xl:left-12 rtl:xl:right-12 ltr:2xl:left-16 rtl:2xl:right-16 ${prevNextButtons === 'none' && 'hidden'
+          }`}
+        nextButtonClasses={`ltr:right-6 rtl:left-6 ltr:md:right-8 rtl:md:left-8 ltr:xl:right-12 rtl:xl:left-12 ltr:2xl:right-16 rtl:2xl:left-16 ${prevNextButtons === 'none' && 'hidden'
+          }`}
         buttonGroupClassName={buttonGroupClassName}
         nextActivateId="hero-slider-next"
         prevActivateId="hero-slider-prev"

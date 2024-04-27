@@ -27,7 +27,7 @@ export default function LanguageSwitcher() {
     <Listbox value={selectedItem} onChange={handleItemClick}>
       {({ open }) => (
         <div className="relative ltr:ml-2 rtl:mr-2 ltr:lg:ml-0 rtl:lg:mr-0 z-10 w-[140px] sm:w-[150px] lg:w-[130px] xl:w-[150px]">
-          <Listbox.Button className="border border-gray-300  text-heading text-[13px] xl:text-sm font-semibold  relative w-full py-2 ltr:pl-3 rtl:pr-3 ltr:pr-7 rtl:pl-7 ltr:text-left rtl:text-right bg-white rounded-lg shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 cursor-pointer">
+          <Listbox.Button className="border border-white bg-black text-white text-[13px] xl:text-sm font-semibold  relative w-full py-2 ltr:pl-3 rtl:pr-3 ltr:pr-7 rtl:pl-7 ltr:text-left rtl:text-right rounded-lg shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 cursor-pointer">
             <span className="flex truncate items-center">
               <span className="ltr:mr-1.5 rtl:ml-1.5">{selectedItem.icon}</span>{' '}
               {t(selectedItem.name)}
@@ -54,8 +54,8 @@ export default function LanguageSwitcher() {
                 <Listbox.Option
                   key={option.id}
                   className={({ active }) =>
-                    `${active ? 'text-amber-900 bg-gray-100' : 'text-gray-900'}
-												cursor-pointer select-none relative py-2 px-3`
+                    `${active ? 'text-amber-300 ' : 'text-white'}
+												cursor-pointer select-none relative py-2 px-3 bg-black `
                   }
                   value={option}
                 >
@@ -63,9 +63,8 @@ export default function LanguageSwitcher() {
                     <span className="flex items-center">
                       {option.icon}
                       <span
-                        className={`${
-                          selected ? 'font-medium' : 'font-normal'
-                        } block truncate ltr:ml-1.5 rtl:mr-1.5`}
+                        className={`${selected ? 'font-medium' : 'font-normal'
+                          } block truncate ltr:ml-1.5 rtl:mr-1.5`}
                       >
                         {t(option.name)}
                       </span>

@@ -26,8 +26,8 @@ const Text: React.FC<Props> = ({ style, className, variant = 'body', children, h
 
   const htmlContentProps = html
     ? {
-        dangerouslySetInnerHTML: { __html: html },
-      }
+      dangerouslySetInnerHTML: { __html: html },
+    }
     : {};
 
   return (
@@ -35,9 +35,9 @@ const Text: React.FC<Props> = ({ style, className, variant = 'body', children, h
       className={cn(
         {
           'text-sm sm:leading-6 leading-7': variant === 'body',
-          'text-body': variant === 'body',
+          'text-white': variant === 'body',
           'text-lg md:text-xl lg:text-2xl 2xl:text-3xl xl:leading-10 font-bold': variant === 'mediumHeading',
-          'text-heading': variant === 'mediumHeading' || variant === 'heading' || variant === 'pageHeading' || variant === 'subHeading',
+          'text-gray-100': variant === 'mediumHeading' || variant === 'heading' || variant === 'pageHeading' || variant === 'subHeading',
           'text-sm md:text-base xl:text-lg font-semibold': variant === 'heading',
           'text-2xl font-bold': variant === 'pageHeading',
           'text-lg md:text-2xl xl:text-3xl 2xl:text-4xl  font-bold': variant === 'subHeading',

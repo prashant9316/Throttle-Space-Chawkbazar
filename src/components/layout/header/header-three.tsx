@@ -10,9 +10,9 @@ import dynamic from 'next/dynamic';
 import { useTranslation } from 'next-i18next';
 import LanguageSwitcher from '@components/ui/language-switcher';
 // import WishButton from '@components/ui/wish-button';
-import { UserLineIcon } from '@components/icons/UserLineIcon';
+// import { UserLineIcon } from '@components/icons/UserLineIcon';
 import Link from '@components/ui/link';
-// import CategoryMenu from '@components/ui/category-menu';
+import CategoryMenu from '@components/ui/category-menu';
 const AuthMenu = dynamic(() => import('@components/layout/header/auth-menu'), {
   ssr: false,
 });
@@ -40,10 +40,10 @@ export default function HeaderThree() {
     <header
       id="siteHeader"
       ref={siteHeaderRef}
-      className="relative z-20 w-full h-16 sm:h-20 lg:h-36 xl:h-40 headerThree"
+      className="relative z-20 w-full h-12 sm:h-16 lg:h-24 xl:h-32 headerThree"
     >
-      <div className="fixed z-20 w-full h-16 px-4 text-gray-700 transition duration-200 ease-in-out bg-white innerSticky body-font sm:h-20 lg:h-36 xl:h-40 ltr:pl-4 rtl:pr-4 ltr:md:pl-0 rtl:md:pr-0 ltr:lg:pl-6 rtl:lg:pr-6 ltr:pr-4 ltr:lg:pr-6 rtl:pl-4 rtl:lg:pl-6 md:px-8 2xl:px-16">
-        <div className="flex items-center justify-center mx-auto max-w-[1920px] h-full lg:h-20 xl:h-24 w-full relative before:absolute before:w-screen before:h-px before:bg-[#F1F1F1] before:bottom-0">
+      <div className="fixed z-20 w-full h-12 bg-black transition duration-200 ease-in-out  innerSticky body-font sm:h-12 lg:h-24 xl:h-24 ">
+        <div className="flex items-center px-4 bg-black text-white justify-center max-w-[1300px] h-full lg:h-12 xl:h-16 relative before:absolute before:w-screen before:h-px before:bg-[#F1F1F1] before:bottom-0 w-[80%] mx-auto">
           <button
             aria-label="Menu"
             className="flex-col items-center justify-center flex-shrink-0 hidden h-full px-5 outline-none menuBtn md:flex lg:hidden 2xl:px-7 focus:outline-none"
@@ -61,7 +61,7 @@ export default function HeaderThree() {
               {site_header.pagesMenu?.map((item: any) => (
                 <Link
                   href={item.path}
-                  className="relative flex items-center px-3 lg:px-2.5 py-0 text-sm font-normal xl:text-base text-heading xl:px-6 hover:text-black"
+                  className="relative flex items-center px-3 lg:px-2.5 py-0 text-sm font-normal xl:text-base text-white xl:px-6 hover:text-gray-200"
                   key={`pages-menu-${item.id}`}
                 >
                   {t(`menu:${item.label}`)}
@@ -97,42 +97,43 @@ export default function HeaderThree() {
               </div> */}
               <div className="hidden lg:flex md:gap-x-4 align-center">
                 <CartButton />
-                <span className="hidden text-sm font-semibold transition-all duration-100 ease-in-out cursor-pointer lg:font-normal lg:block xl:text-base text-heading">
-                  {t('menu:menu-shopping')}
+                <span className="hidden text-sm font-bold transition-all duration-100 ease-in-out cursor-pointer lg:font-normal lg:block xl:text-base text-white">
+                  Cart
                 </span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="items-center hidden lg:flex lg:h-16 headerBottom mx-auto max-w-[1920px]">
-          <div className="flex items-center">
-            {/* <CategoryMenu
-              className="hidden lg:block"
-              categoryMenu={site_header?.categoryMenu}
-            /> */}
-            <HeaderMenu
-              data={site_header.menu}
-              className="hidden lg:flex ltr:pl-3.5 rtl:pr-3.5 ltr:xl:pl-5 rtl:xl:pr-5 "
-            />
-          </div>
+        <div className="bg-[#202020]  items-center hidden lg:block lg:h-16 headerBottom mx-auto">
+          <div className='bg-[#202020] lg:h-16 flex items-center justify-between max-w-[1300px] mx-auto'>
+            <div className="flex items-center">
+              <CategoryMenu
+                className="hidden lg:block"
+                categoryMenu={site_header?.categoryMenu}
+              />
+              <HeaderMenu
+                data={site_header.menu}
+                className="hidden lg:flex ltr:pl-3.5 rtl:pr-3.5 ltr:xl:pl-5 rtl:xl:pr-5 "
+              />
+            </div>
 
-          <div className="flex items-center flex-shrink-0 ltr:ml-auto rtl:mr-auto gap-x-7">
-            <AuthMenu
-              isAuthorized={isAuthorized}
-              href={ROUTES.ACCOUNT}
-              className="flex-shrink-0 hidden text-sm xl:text-base lg:flex focus:outline-none text-heading gap-x-3"
-              btnProps={{
-                children: (
-                  <>
-                    <UserLineIcon className="w-4 xl:w-[17px] h-auto text-black" />
-                    {t('text-login')}
-                  </>
-                ),
-                onClick: handleLogin,
-              }}
-            />
-            <LanguageSwitcher />
+            <div className="flex items-center flex-shrink-0 ltr:ml-auto rtl:mr-auto gap-x-7">
+              <AuthMenu
+                isAuthorized={isAuthorized}
+                href={ROUTES.ACCOUNT}
+                className="text-sm font-semibold xl:text-base text-white"
+                btnProps={{
+                  className:
+                    'text-sm xl:text-base text-heading font-semibold focus:outline-white',
+                  children: t('text-sign-in'),
+                  onClick: handleLogin,
+                }}
+              >
+                {t('text-account')}
+              </AuthMenu>
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
       </div>

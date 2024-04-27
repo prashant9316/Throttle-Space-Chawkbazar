@@ -86,7 +86,7 @@ export default function Search() {
 												))}
 											</div>
 										) : (
-											data?.map((item:any, index: number) => (
+											data?.map((item: any, index: number) => (
 												<div
 													className=" p-5 border-b border-gray-150 relative last:border-b-0"
 													onClick={closeSearch}

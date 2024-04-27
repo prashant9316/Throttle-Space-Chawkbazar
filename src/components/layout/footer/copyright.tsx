@@ -30,13 +30,13 @@ const Copyright: React.FC<CopyrightProps> = ({ payment, variant }) => {
         )}
       >
         <p
-          className={cn('text-body text-xs lg:text-sm leading-6', {
+          className={cn('text-gray-500 text-xs lg:text-sm leading-6', {
             'p-0 m-0': variant === 'contemporary',
           })}
         >
           {t('text-copyright')} &copy; {year}&nbsp;
           <a
-            className="font-semibold text-gray-700 transition-colors duration-200 ease-in-out hover:text-body"
+            className="font-semibold text-white transition-colors duration-200 ease-in-out hover:text-body"
             href={siteSettings.author.websiteUrl}
           >
             {siteSettings.author.name}

@@ -16,14 +16,13 @@ const HeaderMenu: React.FC<MenuProps> = ({ data, className }) => {
     <nav className={classNames(`headerMenu flex w-full relative`, className)}>
       {data?.map((item: any) => (
         <div
-          className={`menuItem group cursor-pointer py-7 ${
-            item.subMenu ? 'relative' : ''
-          }`}
+          className={`menuItem group cursor-pointer py-7 ${item.subMenu ? 'relative' : ''
+            }`}
           key={item.id}
         >
           <Link
             href={item.path}
-            className="relative inline-flex items-center px-3 py-2 text-sm font-normal xl:text-base text-heading xl:px-4 group-hover:text-black"
+            className="relative inline-flex items-center px-3 py-2 text-sm font-normal xl:text-base text-white xl:px-4 group-hover:text-violet-700"
           >
             {t(item.label)}
             {(item?.columns || item.subMenu) && (
