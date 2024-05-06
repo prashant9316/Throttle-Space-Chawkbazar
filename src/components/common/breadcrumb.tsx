@@ -52,7 +52,7 @@ export const BreadcrumbItems = (props: any) => {
 
   return (
     <div className="flex items-center chawkbazarBreadcrumb">
-      <ol className="flex items-center w-full overflow-hidden">{children}</ol>
+      <ol className="flex items-center w-full overflow-hidden text-gray-200">{children}</ol>
     </div>
   );
 };
@@ -62,14 +62,14 @@ const Breadcrumb: React.FC<{ separator?: string }> = ({ separator = '/' }) => {
   const { t } = useTranslation('common');
   return (
     <BreadcrumbItems separator={separator}>
-      <ActiveLink href={'/'} activeClassName="font-semibold text-heading">
+      <ActiveLink href={'/'} activeClassName="font-semibold text-gray-300">
         <a>{t('breadcrumb-home')}</a>
       </ActiveLink>
 
       {breadcrumbs?.map((breadcrumb: any) => (
         <ActiveLink
           href={breadcrumb.href}
-          activeClassName="font-semibold text-heading"
+          activeClassName="font-semibold text-gray-300"
           key={breadcrumb.href}
         >
           <a className="capitalize">

@@ -17,5 +17,5 @@ export const ROUTES = {
   SEARCH: "/search",
   COLLECTIONS: "/collections",
   CATEGORY: "/category",
-  ORDER: "/order",
+  ORDER: "/my-account/orders/",
 };

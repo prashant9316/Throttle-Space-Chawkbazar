@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { useLoginMutation, LoginInputType } from '@framework/auth/use-login';
 import { useUI } from '@contexts/ui.context';
 import Logo from '@components/ui/logo';
-import { ImGoogle2, ImFacebook2 } from 'react-icons/im';
+// import { ImGoogle2, ImFacebook2 } from 'react-icons/im';
 import { useTranslation } from 'next-i18next';
 
 const LoginForm: React.FC = () => {
@@ -25,15 +25,15 @@ const LoginForm: React.FC = () => {
       password,
       remember_me,
     });
-    console.log(email, password, remember_me, 'data');
+    // console.log(email, password, remember_me, 'data');
   }
-  function handelSocialLogin() {
-    login({
-      email: 'demo@demo.com',
-      password: 'demo',
-      remember_me: true,
-    });
-  }
+  // function handelSocialLogin() {
+  //   login({
+  //     email: 'demo@demo.com',
+  //     password: 'demo',
+  //     remember_me: true,
+  //   });
+  // }
   function handleSignUp() {
     setModalView('SIGN_UP_VIEW');
     return openModal();
@@ -119,13 +119,13 @@ const LoginForm: React.FC = () => {
           </div>
         </div>
       </form>
-      <div className="flex flex-col items-center justify-center relative text-sm text-heading mt-6 mb-3.5">
+      {/* <div className="flex flex-col items-center justify-center relative text-sm text-heading mt-6 mb-3.5">
         <hr className="w-full border-gray-300" />
         <span className="absolute -top-2.5 px-2 bg-white">
           {t('common:text-or')}
         </span>
-      </div>
-      <Button
+      </div> */}
+      {/* <Button
         loading={isPending}
         disabled={isPending}
         className="h-11 md:h-12 w-full mt-2.5 bg-facebook hover:bg-facebookHover"
@@ -133,8 +133,8 @@ const LoginForm: React.FC = () => {
       >
         <ImFacebook2 className="text-sm sm:text-base ltr:mr-1.5 rtl:ml-1.5" />
         {t('common:text-login-with-facebook')}
-      </Button>
-      <Button
+      </Button> */}
+      {/* <Button
         loading={isPending}
         disabled={isPending}
         className="h-11 md:h-12 w-full mt-2.5 bg-google hover:bg-googleHover"
@@ -142,7 +142,7 @@ const LoginForm: React.FC = () => {
       >
         <ImGoogle2 className="text-sm sm:text-base ltr:mr-1.5 rtl:ml-1.5" />
         {t('common:text-login-with-google')}
-      </Button>
+      </Button> */}
       <div className="mt-5 mb-1 text-sm text-center sm:text-base text-body">
         {t('common:text-no-account')}{' '}
         <button

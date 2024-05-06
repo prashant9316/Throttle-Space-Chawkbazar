@@ -1,6 +1,7 @@
 export const API_ENDPOINTS = {
-  LOGIN: '/login',
-  REGISTER: '/register',
+  // LOGIN: 'https://throttle-space-backend-service-app.onrender.com/api/customer/login/',
+  LOGIN: 'http://localhost:5055/api/customer/login/',
+  REGISTER: 'https://throttle-space-backend-service-app.onrender.com/api/customer/signup/',
 
   HOMEPAGE_BANNER: "/homepage/banners",
   NEW_ARRIVAL_PRODUCTS: "https://throttle-space-backend-service-app.onrender.com/api/homepage/new-arrivals",

@@ -10,7 +10,7 @@ import { GetServerSideProps } from "next";
 
 export default function ProductPage() {
 	return (
-		<>
+		<div className="bg-black">
 			<Divider className="mb-0" />
 			<Container>
 				<div className="pt-8">
@@ -20,7 +20,7 @@ export default function ProductPage() {
 				{/* <RelatedProducts sectionHeading="text-related-products" /> */}
 				<Subscription />
 			</Container>
-		</>
+		</div>
 	);
 }
 

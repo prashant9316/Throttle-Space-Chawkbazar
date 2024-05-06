@@ -151,14 +151,14 @@ const ProductSingleDetails: React.FC = () => {
 
       <div className="col-span-4 pt-8 lg:pt-0">
         <div className="pb-7 mb-4 border-b border-gray-300">
-          <h2 className="text-heading text-lg md:text-xl lg:text-2xl 2xl:text-3xl font-bold hover:text-black mb-3.5">
+          <h2 className="text-gray-200 text-lg md:text-xl lg:text-2xl 2xl:text-3xl font-bold hover:text-white mb-3.5">
             {data?.title.en}
           </h2>
-          <p className="text-body text-sm lg:text-base leading-6 lg:leading-8">
+          <p className="text-gray-200 text-sm lg:text-base leading-6 lg:leading-8">
             {data?.description.en}
           </p>
           <div className="flex items-center mt-5">
-            <div className="text-heading font-bold text-base md:text-xl lg:text-2xl 2xl:text-4xl ltr:pr-2 rtl:pl-2 ltr:md:pr-0 rtl:md:pl-0 ltr:lg:pr-2 rtl:lg:pl-2 ltr:2xl:pr-0 rtl:2xl:pl-0">
+            <div className="text-white font-bold text-base md:text-xl lg:text-2xl 2xl:text-4xl ltr:pr-2 rtl:pl-2 ltr:md:pr-0 rtl:md:pl-0 ltr:lg:pr-2 rtl:lg:pl-2 ltr:2xl:pr-0 rtl:2xl:pl-0">
               ₹{data?.prices.price}/-
             </div>
             {data?.prices.discount && (
@@ -206,19 +206,19 @@ const ProductSingleDetails: React.FC = () => {
         <div className="py-6">
           <ul className="text-sm space-y-5 pb-1">
             <li>
-              <span className="font-semibold text-heading inline-block ltr:pr-2 rtl:pl-2">
+              <span className="font-semibold text-gray-200 inline-block ltr:pr-2 rtl:pl-2">
                 SKU:
               </span>
               {data?.sku}
             </li>
             {data?.category && (
               <li className="productCategory">
-                <span className="font-josephine text-sm font-semibold text-gray-900 inline-block pe-2">
+                <span className="font-josephine text-sm font-semibold text-gray-200 inline-block pe-2">
                   Category:
                 </span>
                 <Link
                   href="/"
-                  className="font-josephine text-sm transition hover:underline hover:text-heading"
+                  className="font-josephine text-sm transition hover:underline hover:text-white"
                 >
                   {data.category.name.en}
                 </Link>
@@ -227,17 +227,17 @@ const ProductSingleDetails: React.FC = () => {
             <>
               {data?.tag && Array.isArray(data.tag) && (
                 <li className="productTags">
-                  <span className="text-sm font-josephine font-semibold text-gray-900 inline-block pe-2">
+                  <span className="text-sm font-josephine font-semibold text-gray-300 inline-block pe-2">
                     Tags:
                   </span>
                   {data.tag[0].substring(1, data.tag[0].length - 1).split(",").map((t: any, index: number) => (
                     <Link
                       key={index}
                       href={t.replace(/"/g, "")}
-                      className="text-sm font-josephine inline-block pe-1.5 transition hover:underline hover:text-heading last:pe-0"
+                      className="text-sm font-josephine inline-block pe-1.5 transition hover:underline hover:text-white last:pe-0"
                     >
                       {t.replace(/"/g, "")}
-                      <span className=" text-sm font-josephine text-heading">,</span>
+                      <span className=" text-sm font-josephine text-gray-400">,</span>
                     </Link>
                   ))}
                 </li>

@@ -71,7 +71,7 @@ export default function CheckoutModal({ open, onClose, orderDetails }: CheckoutM
                     zIndex: '100'
                 }}
             >
-                <h1 className="text-center text-black text-sm mt-4">Play Scan & Pay <br /> <span className="font-bold text-black ">₹{orderDetails.total}/-</span> <br />Please enter <span onClick={handleCopy} className="bg-cyan-300 cursor-pointer">{orderDetails.orderId}</span> in description while doing the payment!</h1>
+                <h1 className="text-center text-black text-sm mt-4">Play Scan & Pay <br /> <span className="font-bold text-black ">₹{orderDetails !== undefined ? orderDetails.total : 0}/-</span> <br />Please enter <span onClick={handleCopy} className="bg-cyan-300 cursor-pointer">{orderDetails !== undefined ? orderDetails.orderId : ' '}</span> in description while doing the payment!</h1>
                 <p onClick={handleCopy} className="text-center text-xs bg-cyan-300 p-1 mt-2 rounded-sm">click to copy ORDERID</p>
                 <img
                     src="https://res.cloudinary.com/dmlbvaapl/image/upload/v1712743597/chced03je44uce4lvq2w.jpg"

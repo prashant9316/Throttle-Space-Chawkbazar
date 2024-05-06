@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form';
 import Logo from '@components/ui/logo';
 import { useUI } from '@contexts/ui.context';
 import { useSignUpMutation, SignUpInputType } from '@framework/auth/use-signup';
-import { ImGoogle2, ImFacebook2 } from 'react-icons/im';
 import Link from '@components/ui/link';
 import { ROUTES } from '@utils/routes';
 import { useTranslation } from 'next-i18next';
@@ -104,7 +103,7 @@ const SignUpForm: React.FC = () => {
           </div>
         </div>
       </form>
-      <div className="flex flex-col items-center justify-center relative text-sm text-heading mt-6 mb-3.5">
+      {/* <div className="flex flex-col items-center justify-center relative text-sm text-heading mt-6 mb-3.5">
         <hr className="w-full border-gray-300" />
         <span className="absolute -top-2.5 px-2 bg-white">
           {t('common:text-or')}
@@ -128,7 +127,7 @@ const SignUpForm: React.FC = () => {
       >
         <ImGoogle2 className="text-sm sm:text-base ltr:mr-1.5 rtl:ml-1.5" />
         {t('common:text-login-with-google')}
-      </Button>
+      </Button> */}
       <div className="text-sm sm:text-base text-body text-center mt-5 mb-1">
         {t('common:text-have-account')}{' '}
         <button

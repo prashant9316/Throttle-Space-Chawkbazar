@@ -61,7 +61,7 @@ export default function Layout({ children }: React.PropsWithChildren<{}>) {
 				title={t('text-cookies-title')}
 				hide={acceptedCookies}
 				action={
-					<Button onClick={() => onAcceptCookies()} variant="slim">
+					<Button onClick={() => onAcceptCookies()} variant="slim" >
 						{/* @ts-ignore */}
 						{t('text-accept-cookies')}
 					</Button>

@@ -18,7 +18,7 @@ const CookieBar: React.FC<CookieBarProps> = ({
   return (
     <div
       className={cn(
-        'text-center p-5 bg-white text-sm flex-row justify-center items-center font-medium fixed bottom-0 w-full z-30 transition-all duration-300 ease-out shadow-cookies',
+        'text-center p-5 bg-[#202020] text-sm flex-row justify-center items-center font-medium fixed bottom-0 w-full z-30 transition-all duration-300 ease-out shadow-cookies',
         {
           transform: true,
           'translate-y-0 opacity-100': !hide,
@@ -27,8 +27,8 @@ const CookieBar: React.FC<CookieBarProps> = ({
         className
       )}
     >
-      <span className="inline-block mb:block mb-3.5 leading-6">{title}</span>
-      <span className="inline-block ltr:md:ml-3 rtl:md:mr-3">
+      <span className="inline-block mb:block mb-3.5 leading-6 text-gray-300">{title}</span>
+      <span className="inline-block ltr:md:ml-3 rtl:md:mr-3 text-gray-300">
         {description}
       </span>
       {action && action}

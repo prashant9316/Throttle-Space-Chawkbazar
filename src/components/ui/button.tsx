@@ -29,7 +29,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
       'rounded-md ': !disableBorderRadius,
       'bg-heading text-white px-5 md:px-6 lg:px-8 py-4 md:py-3.5 lg:py-4 hover:text-white hover:bg-gray-600 hover:shadow-cart':
         variant === 'flat',
-      'h-11 md:h-12 px-5 bg-heading text-white py-2 transform-none normal-case hover:text-white hover:bg-gray-600 hover:shadow-cart':
+      'h-11 md:h-12 px-5 bg-heading border-2 bg-gray-300 border-white text-white py-2 transform-none normal-case hover:text-white hover:bg-gray-600 hover:shadow-cart':
         variant === 'slim',
       'h-11 md:h-12 px-5 bg-gray-200 text-heading py-2 transform-none normal-case hover:bg-gray-300':
         variant === 'smoke',

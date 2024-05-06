@@ -75,7 +75,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ paymentMethod, setPaymentMe
       body: JSON.stringify(orderDetails),
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${Cookies.get('auth_token')}`
+        'auth': Cookies.get('auth_token') ?? ''
       }
     });
     if (response.ok) {
