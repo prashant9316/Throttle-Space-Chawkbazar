@@ -1,7 +1,7 @@
 import Link from '@components/ui/link';
 import Image from 'next/image';
 import Text from '@components/ui/text';
-import { FaLink } from 'react-icons/fa';
+// import { FaLink } from 'react-icons/fa';
 import { LinkProps } from 'next/link';
 import { useTranslation } from 'next-i18next';
 
@@ -56,7 +56,7 @@ const Card: React.FC<Props> = ({
                 }`}
             />
             <div className="absolute top left h-full w-full flex items-center justify-center">
-              <FaLink className="text-white text-base sm:text-xl lg:text-2xl xl:text-3xl transform opacity-0 scale-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:scale-100" />
+              {/* <FaLink className="text-white text-base sm:text-xl lg:text-2xl xl:text-3xl transform opacity-0 scale-0 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:scale-100" /> */}
             </div>
           </>
         )}

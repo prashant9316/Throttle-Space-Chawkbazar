@@ -1,5 +1,6 @@
-import ProductsBlockCarousel from '@containers/products-block-carousel'
+// import ProductsBlockCarousel from '@containers/products-block-carousel'
 import { useProductsQuery } from '@framework/product/get-all-products-2'
+import ProductScrollCard from '../product-scroll';
 
 interface RecentProductFeedProps {
   heading: string;
@@ -11,17 +12,11 @@ export default function RecentProductFeed({ heading }: RecentProductFeedProps) {
     limit: 10,
   })
 
+  console.log(isLoading, error, data?.productRef)
+
   return (
-    <ProductsBlockCarousel
-      sectionHeading={heading}
-      products={data?.productRef}
-      loading={isLoading}
-      error={error?.message}
-      uniqueKey='new-arrivals'
-      type='gridTrendy'
-      className='mb-12 md:mb-14 xl:mb-16'
-      imgWidth={344}
-      imgHeight={344}
-    />
+    <>
+      <ProductScrollCard products={data?.productRef} heading={heading} />
+    </>
   )
 }
