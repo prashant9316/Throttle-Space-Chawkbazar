@@ -8,7 +8,7 @@ import { ROUTES } from '@utils/routes';
 import { addActiveScroll } from '@utils/add-active-scroll';
 import dynamic from 'next/dynamic';
 import { useTranslation } from 'next-i18next';
-import LanguageSwitcher from '@components/ui/language-switcher';
+// import LanguageSwitcher from '@components/ui/language-switcher';
 // import WishButton from '@components/ui/wish-button';
 // import { UserLineIcon } from '@components/icons/UserLineIcon';
 import Link from '@components/ui/link';
@@ -84,9 +84,9 @@ export default function HeaderThree() {
               <SearchIcon />
             </button>
           </div>
-          <div className="flex flex-shrink-0 transition-all duration-200 ease-in-out transform ltr:ml-auto rtl:mr-auto ltr:mr-3 rtl:ml-3 ltr:lg:mr-5 rtl:lg:ml-5 ltr:xl:mr-8 rtl:xl:ml-8 ltr:2xl:mr-10 rtl:2xl:ml-10 languageSwitcher lg:hidden">
+          {/* <div className="flex flex-shrink-0 transition-all duration-200 ease-in-out transform ltr:ml-auto rtl:mr-auto ltr:mr-3 rtl:ml-3 ltr:lg:mr-5 rtl:lg:ml-5 ltr:xl:mr-8 rtl:xl:ml-8 ltr:2xl:mr-10 rtl:2xl:ml-10 languageSwitcher lg:hidden">
             <LanguageSwitcher />
-          </div>
+          </div> */}
           <div className="flex items-center justify-end flex-shrink-0">
             <div className="flex items-center transition-all wishlistShopping gap-x-7 lg:gap-x-6 xl:gap-x-8 2xl:gap-x-10 ltr:pl-3 rtl:pr-3">
               {/* <div className="flex md:gap-x-4 align-center ">
@@ -97,9 +97,9 @@ export default function HeaderThree() {
               </div> */}
               <div className="hidden lg:flex md:gap-x-4 align-center">
                 <CartButton />
-                <span className="hidden text-sm font-bold transition-all duration-100 ease-in-out cursor-pointer lg:font-normal lg:block xl:text-base text-white">
+                {/* <span className="hidden text-sm font-bold transition-all duration-100 ease-in-out cursor-pointer lg:font-normal lg:block xl:text-base text-white">
                   Cart
-                </span>
+                </span> */}
               </div>
             </div>
           </div>
@@ -132,7 +132,8 @@ export default function HeaderThree() {
               >
                 {t('text-account')}
               </AuthMenu>
-              <LanguageSwitcher />
+              <span className='mr-5'></span>
+              {/* <LanguageSwitcher /> */}
             </div>
           </div>
         </div>

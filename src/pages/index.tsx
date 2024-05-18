@@ -27,11 +27,12 @@ import { homeContemporaryHeroSlider as banners } from '@framework/static/banner'
 import Subscription from '@components/common/subscription';
 import Instagram from '@components/common/instagram';
 // import RecentProductFeed from '@components/product/feeds/recent-product-feed';
-import Crew from '@components/pilots/Crew';
+// import Crew from '@components/pilots/Crew';
 import ProductScrollCard from '@components/product/product-scroll';
 // import BannerProductCard from '@components/product/BannerProducts';
 import FeaturedProductCard from '@components/product/product-featured-card';
 import YoutubeBannerVideo from '@components/product/YoutubeBannerVideo';
+import ProductTilesGroup from '@components/product/product-tiles-group';
 // import {
 //   contemporaryBanner1,
 //   // contemporaryBanner2,
@@ -53,18 +54,25 @@ export default function Home() {
         className="!mb-12 !md:mb-14 !xl:mb-[60px]"
       />
       <Container>
-        {/* <BannerProductCard /> */}
+
         <ProductScrollCard collection="featured" heading="Featured Products" />
+        <YoutubeBannerVideo url={'https://www.youtube.com/embed/lN-Gt_VVwQs?si=rGEVrr9hvHe3_2kb'} heading={"A Sample heading"} description={"A description about the video"} />
+        <ProductScrollCard collection="featured" heading="Newly Launched" />
+
         <FeaturedProductCard id="walksnail-avatar-digital-hd-fpv-goggles-w-patch-antennas" />
+
+        {/* Second Design */}
+        <FeaturedProductCard id="dji-o3-air-unit" />
         <CategoryBlock
           sectionHeading="text-shop-by-category"
           type="rounded"
         />
         <ProductScrollCard collection="featured" heading="Newly Launched" />
-        <FeaturedProductCard id="dji-o3-air-unit" />
-        <Crew heading="Meet the Crew" />
-        <YoutubeBannerVideo url={'https://www.youtube.com/embed/lN-Gt_VVwQs?si=rGEVrr9hvHe3_2kb'} heading={"A Sample heading"} description={"A description about the video"} />
-        <ProductScrollCard collection="walksnail" heading="From Walksnail" />
+
+        {/* <Crew heading="Meet the Crew" /> */}
+        {/* <ProductScrollCard collection="walksnail" heading="From Walksnail" /> */}
+
+        <ProductTilesGroup />
         <Instagram className="mb-4 md:mb-5 xl:mb-16" variant="rounded" />
         <Subscription className="bg-opacity-1 px-5 sm:px-16 xl:px-10 mb-12 md:mb-14 xl:mb-16 lg:mt-16 mt-12 py-10 md:py-10 lg:py-16" />
       </Container>

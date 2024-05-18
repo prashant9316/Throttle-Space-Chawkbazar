@@ -24,7 +24,7 @@ const HeroSlider: React.FC<Props> = ({
   return (
     <div
       className={cn(
-        'relative mb-5 md:mb-8 pt-[50px]',
+        'relative mb-5 md:mb-8 pt-[20px]',
         {
           'mx-auto max-w-[1300px] h-[350px]': variant === 'fullWidth',
         },

@@ -6,7 +6,7 @@ import { ROUTES } from '@utils/routes';
 import { addActiveScroll } from '@utils/add-active-scroll';
 import dynamic from 'next/dynamic';
 import { useTranslation } from 'next-i18next';
-import LanguageSwitcher from '@components/ui/language-switcher';
+// import LanguageSwitcher from '@components/ui/language-switcher';
 const AuthMenu = dynamic(() => import('./auth-menu'), { ssr: false });
 const CartButton = dynamic(() => import('@components/cart/cart-button'), {
   ssr: false,
@@ -57,7 +57,7 @@ const HeaderTwo: React.FC = () => {
           <Logo />
 
           <div className="flex items-center justify-end w-full ltr:md:mr-5 rtl:md:ml-5 ltr:xl:mr-8 rtl:xl:ml-8 ltr:2xl:mr-10 rtl:2xl:ml-10">
-            <LanguageSwitcher />
+            {/* <LanguageSwitcher /> */}
           </div>
           <div className="items-center justify-end flex-shrink-0 hidden md:flex gap-x-6 lg:gap-x-5 xl:gap-x-8 2xl:gap-x-10 ltr:ml-auto rtl:mr-auto">
             <button
